@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PRACTICA
+namespace PRACTICA.view
 {
-    public partial class Login : Form
+    public partial class TestForm : Form
     {
-        public Login()
+        public TestForm()
         {
             InitializeComponent();
         }
