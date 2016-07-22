@@ -72,15 +72,6 @@ namespace PRACTICA.view
                 else if (type == "Servicios menos cotizados")
                     getBottom("servicies", top);
 
-                else if (type == "Articulos mas solicitados no ofrecidos")
-                {
-
-                }
-                else if (type == "Servicios mas solicitados no ofrecidos")
-                {
-
-                }
-
                 mainGraph.ChartAreas[0].RecalculateAxesScale();
             }
         }
@@ -144,27 +135,30 @@ namespace PRACTICA.view
 
         private void type_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* var selectedType = type_combo.SelectedIndex;
-            if (selectedType == 0)
-            {
-                top_label.Visible = false;
-                top_combo.Visible = false;
-            }
-            else
-            {
-                top_label.Visible = true;
-                top_combo.Visible = true;
-            }*/
+            /* var selectedType = type_combo.SelectedIndex;
+             if (selectedType == 0)
+             {
+                 top_label.Visible = false;
+                 top_combo.Visible = false;
+             }
+             else
+             {
+                 top_label.Visible = true;
+                 top_combo.Visible = true;
+             }*/
         }
 
-        private void close_Click(object sender, EventArgs e)
+        private void type_Click(object sender, EventArgs e)
         {
-            Close();
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            type_menuStrip.Show(ptLowerLeft);
         }
 
-        private void minimize_Click(object sender, EventArgs e)
+        private void SubmenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            ((ToolStripMenuItem)sender).Checked = true;
         }
     }
 }

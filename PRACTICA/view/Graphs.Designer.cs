@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.mainGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.type_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.familiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosMasCotizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosMasCotizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,71 +53,92 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.top_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.type_menuStrip.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.top_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainGraph
             // 
-            chartArea9.Name = "ChartArea1";
-            this.mainGraph.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.mainGraph.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.mainGraph.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.mainGraph.Legends.Add(legend1);
             this.mainGraph.Location = new System.Drawing.Point(280, 83);
             this.mainGraph.Name = "mainGraph";
             this.mainGraph.Size = new System.Drawing.Size(846, 547);
             this.mainGraph.TabIndex = 0;
             this.mainGraph.Text = "chart1";
-            title9.Name = "Title";
-            this.mainGraph.Titles.Add(title9);
+            title1.Name = "Title";
+            this.mainGraph.Titles.Add(title1);
             this.mainGraph.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainGraph_MouseDoubleClick);
             // 
-            // contextMenuStrip1
+            // type_menuStrip
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.type_menuStrip.AutoSize = false;
+            this.type_menuStrip.Enabled = false;
+            this.type_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.familiasToolStripMenuItem,
             this.articulosMasCotizadosToolStripMenuItem,
             this.serviciosMasCotizadosToolStripMenuItem,
             this.articulosMenosCotizadosToolStripMenuItem,
             this.serviciosMenosCotizadosToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 114);
+            this.type_menuStrip.Name = "contextMenuStrip1";
+            this.type_menuStrip.ShowCheckMargin = true;
+            this.type_menuStrip.ShowImageMargin = false;
+            this.type_menuStrip.Size = new System.Drawing.Size(265, 136);
             // 
             // familiasToolStripMenuItem
             // 
+            this.familiasToolStripMenuItem.AutoSize = false;
+            this.familiasToolStripMenuItem.Enabled = false;
             this.familiasToolStripMenuItem.Name = "familiasToolStripMenuItem";
-            this.familiasToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.familiasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.familiasToolStripMenuItem.Text = "Familias";
+            this.familiasToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
             // 
             // articulosMasCotizadosToolStripMenuItem
             // 
+            this.articulosMasCotizadosToolStripMenuItem.AutoSize = false;
+            this.articulosMasCotizadosToolStripMenuItem.Enabled = false;
             this.articulosMasCotizadosToolStripMenuItem.Name = "articulosMasCotizadosToolStripMenuItem";
-            this.articulosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.articulosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMasCotizadosToolStripMenuItem.Text = "Articulos mas cotizados";
+            this.articulosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
             // 
             // serviciosMasCotizadosToolStripMenuItem
             // 
+            this.serviciosMasCotizadosToolStripMenuItem.AutoSize = false;
+            this.serviciosMasCotizadosToolStripMenuItem.Enabled = false;
             this.serviciosMasCotizadosToolStripMenuItem.Name = "serviciosMasCotizadosToolStripMenuItem";
-            this.serviciosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.serviciosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMasCotizadosToolStripMenuItem.Text = "Servicios mas cotizados";
+            this.serviciosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
             // 
             // articulosMenosCotizadosToolStripMenuItem
             // 
+            this.articulosMenosCotizadosToolStripMenuItem.AutoSize = false;
+            this.articulosMenosCotizadosToolStripMenuItem.Enabled = false;
             this.articulosMenosCotizadosToolStripMenuItem.Name = "articulosMenosCotizadosToolStripMenuItem";
-            this.articulosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.articulosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMenosCotizadosToolStripMenuItem.Text = "Articulos menos cotizados";
+            this.articulosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
             // 
             // serviciosMenosCotizadosToolStripMenuItem
             // 
+            this.serviciosMenosCotizadosToolStripMenuItem.AutoSize = false;
+            this.serviciosMenosCotizadosToolStripMenuItem.Enabled = false;
             this.serviciosMenosCotizadosToolStripMenuItem.Name = "serviciosMenosCotizadosToolStripMenuItem";
-            this.serviciosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.serviciosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMenosCotizadosToolStripMenuItem.Text = "Servicios menos cotizados";
+            this.serviciosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
             // 
             // panel2
             // 
@@ -169,6 +190,7 @@
             // type
             // 
             this.type.BackColor = System.Drawing.Color.Transparent;
+            this.type.ContextMenuStrip = this.type_menuStrip;
             this.type.Dock = System.Windows.Forms.DockStyle.Top;
             this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +201,7 @@
             this.type.TabIndex = 3;
             this.type.Text = "Tipo de grafica";
             this.type.UseVisualStyleBackColor = false;
+            this.type.Click += new System.EventHandler(this.type_Click);
             // 
             // button1
             // 
@@ -226,7 +249,7 @@
             this.generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.generate.Location = new System.Drawing.Point(0, 294);
+            this.generate.Location = new System.Drawing.Point(-1, 350);
             this.generate.Name = "generate";
             this.generate.Size = new System.Drawing.Size(265, 59);
             this.generate.TabIndex = 14;
@@ -277,6 +300,21 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // top_menuStrip
+            // 
+            this.top_menuStrip.AutoSize = false;
+            this.top_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.top_menuStrip.Name = "top_menuStrip";
+            this.top_menuStrip.ShowImageMargin = false;
+            this.top_menuStrip.Size = new System.Drawing.Size(265, 26);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(55, 22);
+            this.toolStripMenuItem2.Text = "3";
+            // 
             // Graphs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,13 +332,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graficas";
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.type_menuStrip.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.top_menuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,7 +348,7 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart mainGraph;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip type_menuStrip;
         private System.Windows.Forms.ToolStripMenuItem familiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem articulosMasCotizadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serviciosMasCotizadosToolStripMenuItem;
@@ -328,5 +367,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ContextMenuStrip top_menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
