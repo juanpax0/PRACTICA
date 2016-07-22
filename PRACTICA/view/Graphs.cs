@@ -24,6 +24,15 @@ namespace PRACTICA.view
             pictureBox1.ImageLocation = "C:\\a.gif";
         }
 
+        private string findSelected(ToolStripItemCollection cm) {
+            foreach (ToolStripMenuItem item in cm)
+            {
+                if (item.Checked)
+                    return item.Text;
+            }
+            return null;
+        }
+
         private void generate_Click(object sender, EventArgs e)
         {
 
@@ -42,10 +51,7 @@ namespace PRACTICA.view
             //.................................................
             //....................................................................
 
-            //object selectedType = type_combo.SelectedItem;
-            //object selectedTop = top_combo.SelectedItem;
-
-            object selectedType = "Articulos mas cotizados";
+            object selectedType = findSelected(type_menuStrip.Items);
             object selectedTop = "5";
 
             if (selectedType != null && selectedTop != null)
@@ -150,15 +156,33 @@ namespace PRACTICA.view
 
         private void type_Click(object sender, EventArgs e)
         {
+            ((Button)sender).Image = Properties.Resources.up_arrow;
+
+            //if(type_menuStrip.close)
             Button btnSender = (Button)sender;
             Point ptLowerLeft = new Point(0, btnSender.Height);
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
             type_menuStrip.Show(ptLowerLeft);
         }
 
-        private void SubmenuItem_Click(object sender, EventArgs e)
+        // se puede cambiar este evento de click por uno de checked change o algo asi
+        private void type_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((ToolStripMenuItem)sender).Checked = true;
+            var sItem = (ToolStripMenuItem)sender;
+
+            foreach (ToolStripMenuItem item in type_menuStrip.Items)
+            {
+                if (item != sItem)
+                    item.Checked = false;
+            }
+        }
+
+        private void type_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+           /* ((Button)(((ContextMenuStrip)sender).)).Image =
+                Properties.Resources.down_arrow; */
+
+            type.Image = Properties.Resources.down_arrow;
         }
     }
 }
