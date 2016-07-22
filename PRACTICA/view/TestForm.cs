@@ -16,5 +16,15 @@ namespace PRACTICA.view
         {
             InitializeComponent();
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

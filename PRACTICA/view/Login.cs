@@ -18,9 +18,7 @@ namespace PRACTICA
             InitializeComponent();
         }
 
-        bool waterMarkActive = true;
-
-        private void conn_button_Click(object sender, EventArgs e)
+        private void conn_Click(object sender, EventArgs e)
         {
             this.Hide();
             var gpm = new view.MainMenu();
@@ -28,21 +26,34 @@ namespace PRACTICA
             gpm.Show();
         }
 
-        private void user_textBox_TextChanged(object sender, EventArgs e)
+        private void textBox_GotFocus(object sender, EventArgs e)
         {
-            if (user_textBox.Text == "")
-                user_textBox.Text = "Usuario";
+            if (((TextBox)sender).ForeColor == Color.Gray)
+            {
+                ((TextBox)sender).Text = "";
+                ((TextBox)sender).ForeColor = Color.Black;
+            }
         }
 
-        private void pass_textBox_TextChanged(object sender, EventArgs e)
+        private void textBox_LostFocus(object sender, EventArgs e)
         {
-            if (user_textBox.Text == "")
-                user_textBox.Text = "Contraseña";
+            if (((TextBox)sender).Text == "")
+            {
+                var name = ((TextBox)sender).Name;
+                var text = (name == "user_textBox") ? "Usuario" : "Contraseña";
+                ((TextBox)sender).Text = text;
+                ((TextBox)sender).ForeColor = Color.Gray;
+            }
         }
 
-        private void user_textBox_Click(object sender, EventArgs e)
+        private void conn_MouseEnter(object sender, EventArgs e)
         {
-            user_textBox.Text = "";
+            conn.FlatStyle = FlatStyle.Popup;
+        }
+
+        private void conn_MouseLeave(object sender, EventArgs e)
+        {
+            conn.FlatStyle = FlatStyle.Flat;
         }
     }
 }

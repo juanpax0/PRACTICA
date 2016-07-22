@@ -32,14 +32,13 @@ namespace PRACTICA
         {
             this.user_textBox = new System.Windows.Forms.TextBox();
             this.pass_textBox = new System.Windows.Forms.TextBox();
-            this.conn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.conn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.conn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,55 +48,58 @@ namespace PRACTICA
             // user_textBox
             // 
             this.user_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.user_textBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.user_textBox.ForeColor = System.Drawing.Color.Gray;
             this.user_textBox.Location = new System.Drawing.Point(62, 86);
             this.user_textBox.Name = "user_textBox";
             this.user_textBox.Size = new System.Drawing.Size(229, 20);
             this.user_textBox.TabIndex = 0;
             this.user_textBox.Tag = "";
             this.user_textBox.Text = "Usuario";
-            this.user_textBox.Click += new System.EventHandler(this.user_textBox_Click);
-            this.user_textBox.TextChanged += new System.EventHandler(this.user_textBox_TextChanged);
-            this.user_textBox.ForeColor = Color.Gray;
-            this.user_textBox.Text = "Type here";            
+            this.user_textBox.GotFocus += new System.EventHandler(this.textBox_GotFocus);
+            this.user_textBox.LostFocus += new System.EventHandler(this.textBox_LostFocus);
             // 
             // pass_textBox
             // 
             this.pass_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pass_textBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.pass_textBox.ForeColor = System.Drawing.Color.Gray;
             this.pass_textBox.Location = new System.Drawing.Point(62, 145);
             this.pass_textBox.Name = "pass_textBox";
             this.pass_textBox.Size = new System.Drawing.Size(229, 20);
             this.pass_textBox.TabIndex = 1;
             this.pass_textBox.Text = "Contraseña";
-            this.pass_textBox.TextChanged += new System.EventHandler(this.pass_textBox_TextChanged);
-            // 
-            // conn
-            // 
-            this.conn.BackgroundImage = global::PRACTICA.Properties.Resources.conectar;
-            this.conn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.conn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.conn.Location = new System.Drawing.Point(96, 191);
-            this.conn.Name = "conn";
-            this.conn.Size = new System.Drawing.Size(138, 41);
-            this.conn.TabIndex = 4;
-            this.conn.TabStop = false;
-            this.conn.Click += new System.EventHandler(this.conn_button_Click);
+            this.pass_textBox.GotFocus += new System.EventHandler(this.textBox_GotFocus);
+            this.pass_textBox.LostFocus += new System.EventHandler(this.textBox_LostFocus);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.conn);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.conn);
             this.panel1.Controls.Add(this.user_textBox);
             this.panel1.Controls.Add(this.pass_textBox);
             this.panel1.Location = new System.Drawing.Point(167, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 252);
             this.panel1.TabIndex = 7;
+            // 
+            // conn
+            // 
+            this.conn.BackColor = System.Drawing.Color.Transparent;
+            this.conn.BackgroundImage = global::PRACTICA.Properties.Resources.conectar;
+            this.conn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.conn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.conn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.conn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.conn.Location = new System.Drawing.Point(98, 185);
+            this.conn.Name = "conn";
+            this.conn.Size = new System.Drawing.Size(135, 41);
+            this.conn.TabIndex = 10;
+            this.conn.UseVisualStyleBackColor = false;
+            this.conn.Click += new System.EventHandler(this.conn_Click);
+            this.conn.MouseEnter += new System.EventHandler(this.conn_MouseEnter);
+            this.conn.MouseLeave += new System.EventHandler(this.conn_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -154,6 +156,7 @@ namespace PRACTICA
             // 
             // Login
             // 
+            this.AcceptButton = this.conn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PRACTICA.Properties.Resources.renteco;
@@ -167,7 +170,6 @@ namespace PRACTICA
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.conn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -182,13 +184,13 @@ namespace PRACTICA
 
         private System.Windows.Forms.TextBox user_textBox;
         private System.Windows.Forms.TextBox pass_textBox;
-        private System.Windows.Forms.PictureBox conn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button conn;
     }
 }
 

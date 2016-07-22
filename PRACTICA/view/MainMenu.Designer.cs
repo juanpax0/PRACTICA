@@ -101,7 +101,7 @@
             this.graph_panel.Controls.Add(this.label1);
             this.graph_panel.Controls.Add(this.graphs);
             this.graph_panel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.graph_panel.Location = new System.Drawing.Point(75, 114);
+            this.graph_panel.Location = new System.Drawing.Point(398, 137);
             this.graph_panel.Name = "graph_panel";
             this.graph_panel.Size = new System.Drawing.Size(292, 131);
             this.graph_panel.TabIndex = 6;
@@ -125,7 +125,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.reports);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(398, 114);
+            this.panel2.Location = new System.Drawing.Point(75, 137);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 131);
             this.panel2.TabIndex = 7;
@@ -242,8 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::PRACTICA.Properties.Resources.whitetexture;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 506);
             this.Controls.Add(this.quotation_panel);
