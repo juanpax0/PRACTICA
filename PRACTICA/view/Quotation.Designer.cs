@@ -43,10 +43,8 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Total = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.exit = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // FromID
@@ -167,23 +165,11 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Lista a Cotizar";
             // 
-            // exit
-            // 
-            this.exit.BackgroundImage = global::PRACTICA.Properties.Resources.logout1;
-            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit.Location = new System.Drawing.Point(873, 12);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(45, 42);
-            this.exit.TabIndex = 9;
-            this.exit.TabStop = false;
-            // 
             // Quotation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 556);
-            this.Controls.Add(this.exit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.listView2);
@@ -198,7 +184,6 @@
             this.Load += new System.EventHandler(this.CotizacionView_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +205,5 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem editAmoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        public System.Windows.Forms.PictureBox exit;
     }
 }

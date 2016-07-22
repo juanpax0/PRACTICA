@@ -33,10 +33,10 @@ namespace PRACTICA
             this.user_textBox = new System.Windows.Forms.TextBox();
             this.pass_textBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.conn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.conn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -74,8 +74,9 @@ namespace PRACTICA
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.conn);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.conn);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.user_textBox);
             this.panel1.Controls.Add(this.pass_textBox);
@@ -84,22 +85,14 @@ namespace PRACTICA
             this.panel1.Size = new System.Drawing.Size(316, 252);
             this.panel1.TabIndex = 7;
             // 
-            // conn
+            // panel3
             // 
-            this.conn.BackColor = System.Drawing.Color.Transparent;
-            this.conn.BackgroundImage = global::PRACTICA.Properties.Resources.conectar;
-            this.conn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.conn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.conn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.conn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.conn.Location = new System.Drawing.Point(98, 185);
-            this.conn.Name = "conn";
-            this.conn.Size = new System.Drawing.Size(135, 41);
-            this.conn.TabIndex = 10;
-            this.conn.UseVisualStyleBackColor = false;
-            this.conn.Click += new System.EventHandler(this.conn_Click);
-            this.conn.MouseEnter += new System.EventHandler(this.conn_MouseEnter);
-            this.conn.MouseLeave += new System.EventHandler(this.conn_MouseLeave);
+            this.panel3.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(0, 48);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(316, 3);
+            this.panel3.TabIndex = 9;
             // 
             // pictureBox2
             // 
@@ -111,6 +104,20 @@ namespace PRACTICA
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // conn
+            // 
+            this.conn.BackColor = System.Drawing.Color.Brown;
+            this.conn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.conn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conn.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.conn.Location = new System.Drawing.Point(62, 183);
+            this.conn.Name = "conn";
+            this.conn.Size = new System.Drawing.Size(193, 50);
+            this.conn.TabIndex = 15;
+            this.conn.Text = "Conectar";
+            this.conn.UseVisualStyleBackColor = false;
+            this.conn.Click += new System.EventHandler(this.conn_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::PRACTICA.Properties.Resources.username;
@@ -121,19 +128,9 @@ namespace PRACTICA
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(167, 122);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(316, 10);
-            this.panel3.TabIndex = 9;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel2.BackgroundImage = global::PRACTICA.Properties.Resources.blacktexture;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
@@ -146,11 +143,11 @@ namespace PRACTICA
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 29);
+            this.label1.Size = new System.Drawing.Size(214, 30);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ingrese sus datos";
             // 
@@ -162,7 +159,6 @@ namespace PRACTICA
             this.BackgroundImage = global::PRACTICA.Properties.Resources.renteco;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(636, 395);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

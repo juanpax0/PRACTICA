@@ -24,11 +24,11 @@ namespace PRACTICA.view
             pictureBox1.ImageLocation = "C:\\a.gif";
         }
 
-        private void create_Click(object sender, EventArgs e)
+        private void generate_Click(object sender, EventArgs e)
         {
 
             //...............................................
-            var d = desde.Value.Date;
+            /*var d = desde.Value.Date;
             var h = hasta.Value.Date;
 
             if (d <= h)
@@ -38,11 +38,15 @@ namespace PRACTICA.view
             else
             {
                 Console.WriteLine("error en fecha");
-            }
+            } */
             //.................................................
+            //....................................................................
 
-            object selectedType = type_combo.SelectedItem;
-            object selectedTop = top_combo.SelectedItem;
+            //object selectedType = type_combo.SelectedItem;
+            //object selectedTop = top_combo.SelectedItem;
+
+            object selectedType = "Articulos mas cotizados";
+            object selectedTop = "5";
 
             if (selectedType != null && selectedTop != null)
             {
@@ -140,7 +144,7 @@ namespace PRACTICA.view
 
         private void type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedType = type_combo.SelectedIndex;
+           /* var selectedType = type_combo.SelectedIndex;
             if (selectedType == 0)
             {
                 top_label.Visible = false;
@@ -150,7 +154,17 @@ namespace PRACTICA.view
             {
                 top_label.Visible = true;
                 top_combo.Visible = true;
-            }
+            }*/
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

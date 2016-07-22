@@ -25,32 +25,6 @@ namespace PRACTICA.view
 
         }
 
-        private void exit_Click(object sender, EventArgs e)
-        {
-            DialogResult dr =
-                MessageBox.Show("Se cerraran todas las ventanas abiertas y será redirigido al login principal.",
-                "¿Seguro?", MessageBoxButtons.YesNo);
-
-            if (dr == DialogResult.Yes)
-            {
-                closeWindows();
-
-                Hide();
-                var login = new Login();
-                login.Closed += (s, args) => this.Close();
-                login.Show();
-            }
-        }
-
-        private void closeWindows()
-        {
-            foreach (Form f in openWindows)
-            {
-                f.Close();
-            }
-            openWindows.Clear();
-        }
-
         private void panel_MouseEnter(object sender, EventArgs e)
         {
             ((Panel)sender).BorderStyle = BorderStyle.FixedSingle;
@@ -71,21 +45,37 @@ namespace PRACTICA.view
             ((Panel)(((PictureBox)sender).Parent)).BorderStyle = BorderStyle.None;
         }
 
-
-        private void quotation_panel_Click(object sender, EventArgs e)
-        {
-            var quo = new Quotation();
-            openWindows.Add(quo);
-            quo.Show();
-            quo.exit.Click += new EventHandler(exit_Click);
-        }
-
         private void graph_panel_Click(object sender, EventArgs e)
         {
             var g = new Graphs();
             openWindows.Add(g);
             g.Show();
-            g.exit.Click += new EventHandler(exit_Click);
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr =
+                            MessageBox.Show("Se cerraran todas las ventanas abiertas y será redirigido al login principal.",
+                            "¿Seguro?", MessageBoxButtons.YesNo);
+
+            if (dr == DialogResult.Yes)
+            {
+                closeWindows();
+
+                Hide();
+                var login = new Login();
+                login.Closed += (s, args) => this.Close();
+                login.Show();
+            }
+        }
+
+        private void closeWindows()
+        {
+            foreach (Form f in openWindows)
+            {
+                f.Close();
+            }
+            openWindows.Clear();
         }
     }
 }

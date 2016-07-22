@@ -45,15 +45,5 @@ namespace PRACTICA
                 ((TextBox)sender).ForeColor = Color.Gray;
             }
         }
-
-        private void conn_MouseEnter(object sender, EventArgs e)
-        {
-            conn.FlatStyle = FlatStyle.Popup;
-        }
-
-        private void conn_MouseLeave(object sender, EventArgs e)
-        {
-            conn.FlatStyle = FlatStyle.Flat;
-        }
     }
 }

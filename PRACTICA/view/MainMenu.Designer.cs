@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.exit = new System.Windows.Forms.PictureBox();
             this.reports = new System.Windows.Forms.PictureBox();
             this.graphs = new System.Windows.Forms.PictureBox();
             this.graph_panel = new System.Windows.Forms.Panel();
@@ -43,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.query = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.graphs)).BeginInit();
             this.graph_panel.SuspendLayout();
@@ -53,19 +52,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.query)).BeginInit();
             this.SuspendLayout();
-            // 
-            // exit
-            // 
-            this.exit.BackColor = System.Drawing.Color.Transparent;
-            this.exit.BackgroundImage = global::PRACTICA.Properties.Resources.logout1;
-            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit.Location = new System.Drawing.Point(727, 23);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(44, 43);
-            this.exit.TabIndex = 5;
-            this.exit.TabStop = false;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // reports
             // 
@@ -152,7 +138,6 @@
             this.quotation_panel.Name = "quotation_panel";
             this.quotation_panel.Size = new System.Drawing.Size(292, 133);
             this.quotation_panel.TabIndex = 7;
-            this.quotation_panel.Click += new System.EventHandler(this.quotation_panel_Click);
             this.quotation_panel.MouseEnter += new System.EventHandler(this.panel_MouseEnter);
             this.quotation_panel.MouseLeave += new System.EventHandler(this.panel_MouseLeave);
             // 
@@ -238,6 +223,14 @@
             this.query.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
             this.query.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel5.Location = new System.Drawing.Point(13, 103);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(758, 2);
+            this.panel5.TabIndex = 16;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,16 +238,16 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 506);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.quotation_panel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.graph_panel);
-            this.Controls.Add(this.exit);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.GraphsRepoMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.graphs)).EndInit();
             this.graph_panel.ResumeLayout(false);
@@ -274,7 +267,6 @@
         #endregion
         private System.Windows.Forms.PictureBox graphs;
         private System.Windows.Forms.PictureBox reports;
-        private System.Windows.Forms.PictureBox exit;
         private System.Windows.Forms.Panel graph_panel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -287,5 +279,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox query;
+        private System.Windows.Forms.Panel panel5;
     }
 }
