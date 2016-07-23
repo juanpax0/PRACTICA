@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.mainGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.type_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.familiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,47 +43,51 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.top = new System.Windows.Forms.Button();
-            this.type = new System.Windows.Forms.Button();
+            this.top_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.generate = new System.Windows.Forms.Button();
+            this.type = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.top_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).BeginInit();
             this.type_menuStrip.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.top_menuStrip.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.top_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainGraph
             // 
-            chartArea1.Name = "ChartArea1";
-            this.mainGraph.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.mainGraph.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.mainGraph.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.mainGraph.Legends.Add(legend9);
             this.mainGraph.Location = new System.Drawing.Point(280, 83);
             this.mainGraph.Name = "mainGraph";
             this.mainGraph.Size = new System.Drawing.Size(846, 547);
             this.mainGraph.TabIndex = 0;
             this.mainGraph.Text = "chart1";
-            title1.Name = "Title";
-            this.mainGraph.Titles.Add(title1);
+            title9.Name = "Title";
+            this.mainGraph.Titles.Add(title9);
             this.mainGraph.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainGraph_MouseDoubleClick);
             // 
             // type_menuStrip
             // 
             this.type_menuStrip.AutoSize = false;
-            this.type_menuStrip.Enabled = false;
             this.type_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.familiasToolStripMenuItem,
             this.articulosMasCotizadosToolStripMenuItem,
@@ -94,51 +98,57 @@
             this.type_menuStrip.ShowCheckMargin = true;
             this.type_menuStrip.ShowImageMargin = false;
             this.type_menuStrip.Size = new System.Drawing.Size(265, 136);
+            this.type_menuStrip.Tag = "false";
             // 
             // familiasToolStripMenuItem
             // 
             this.familiasToolStripMenuItem.AutoSize = false;
-            this.familiasToolStripMenuItem.Enabled = false;
+            this.familiasToolStripMenuItem.CheckOnClick = true;
             this.familiasToolStripMenuItem.Name = "familiasToolStripMenuItem";
             this.familiasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.familiasToolStripMenuItem.Text = "Familias";
-            this.familiasToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
+            this.familiasToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
+            this.familiasToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // articulosMasCotizadosToolStripMenuItem
             // 
             this.articulosMasCotizadosToolStripMenuItem.AutoSize = false;
-            this.articulosMasCotizadosToolStripMenuItem.Enabled = false;
+            this.articulosMasCotizadosToolStripMenuItem.CheckOnClick = true;
             this.articulosMasCotizadosToolStripMenuItem.Name = "articulosMasCotizadosToolStripMenuItem";
             this.articulosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMasCotizadosToolStripMenuItem.Text = "Articulos mas cotizados";
-            this.articulosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
+            this.articulosMasCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
+            this.articulosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // serviciosMasCotizadosToolStripMenuItem
             // 
             this.serviciosMasCotizadosToolStripMenuItem.AutoSize = false;
-            this.serviciosMasCotizadosToolStripMenuItem.Enabled = false;
+            this.serviciosMasCotizadosToolStripMenuItem.CheckOnClick = true;
             this.serviciosMasCotizadosToolStripMenuItem.Name = "serviciosMasCotizadosToolStripMenuItem";
             this.serviciosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMasCotizadosToolStripMenuItem.Text = "Servicios mas cotizados";
-            this.serviciosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
+            this.serviciosMasCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
+            this.serviciosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // articulosMenosCotizadosToolStripMenuItem
             // 
             this.articulosMenosCotizadosToolStripMenuItem.AutoSize = false;
-            this.articulosMenosCotizadosToolStripMenuItem.Enabled = false;
+            this.articulosMenosCotizadosToolStripMenuItem.CheckOnClick = true;
             this.articulosMenosCotizadosToolStripMenuItem.Name = "articulosMenosCotizadosToolStripMenuItem";
             this.articulosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMenosCotizadosToolStripMenuItem.Text = "Articulos menos cotizados";
-            this.articulosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
+            this.articulosMenosCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
+            this.articulosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // serviciosMenosCotizadosToolStripMenuItem
             // 
             this.serviciosMenosCotizadosToolStripMenuItem.AutoSize = false;
-            this.serviciosMenosCotizadosToolStripMenuItem.Enabled = false;
+            this.serviciosMenosCotizadosToolStripMenuItem.CheckOnClick = true;
             this.serviciosMenosCotizadosToolStripMenuItem.Name = "serviciosMenosCotizadosToolStripMenuItem";
             this.serviciosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMenosCotizadosToolStripMenuItem.Text = "Servicios menos cotizados";
-            this.serviciosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.SubmenuItem_Click);
+            this.serviciosMenosCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
+            this.serviciosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -180,28 +190,68 @@
             this.top.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.top.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.top.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.top.Image = global::PRACTICA.Properties.Resources.down_arrow;
+            this.top.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.top.Location = new System.Drawing.Point(0, 161);
             this.top.Name = "top";
             this.top.Size = new System.Drawing.Size(265, 46);
             this.top.TabIndex = 4;
             this.top.Text = "Top";
             this.top.UseVisualStyleBackColor = false;
+            this.top.Click += new System.EventHandler(this.top_Click);
             // 
-            // type
+            // top_menuStrip
             // 
-            this.type.BackColor = System.Drawing.Color.Transparent;
-            this.type.ContextMenuStrip = this.type_menuStrip;
-            this.type.Dock = System.Windows.Forms.DockStyle.Top;
-            this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.type.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.type.Location = new System.Drawing.Point(0, 115);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(265, 46);
-            this.type.TabIndex = 3;
-            this.type.Text = "Tipo de grafica";
-            this.type.UseVisualStyleBackColor = false;
-            this.type.Click += new System.EventHandler(this.type_Click);
+            this.top_menuStrip.AutoSize = false;
+            this.top_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripSeparator1,
+            this.toolStripTextBox1});
+            this.top_menuStrip.Name = "top_menuStrip";
+            this.top_menuStrip.ShowCheckMargin = true;
+            this.top_menuStrip.ShowImageMargin = false;
+            this.top_menuStrip.Size = new System.Drawing.Size(265, 175);
+            this.top_menuStrip.Tag = "false";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.AutoSize = false;
+            this.toolStripMenuItem2.CheckOnClick = true;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(265, 22);
+            this.toolStripMenuItem2.Text = "3";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.AutoSize = false;
+            this.toolStripMenuItem3.CheckOnClick = true;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(265, 22);
+            this.toolStripMenuItem3.Text = "5";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.AutoSize = false;
+            this.toolStripMenuItem4.CheckOnClick = true;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(265, 22);
+            this.toolStripMenuItem4.Text = "7";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.AutoSize = false;
+            this.toolStripMenuItem5.CheckOnClick = true;
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(265, 22);
+            this.toolStripMenuItem5.Text = "10";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
             // 
             // button1
             // 
@@ -249,13 +299,30 @@
             this.generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.generate.Location = new System.Drawing.Point(-1, 350);
+            this.generate.Location = new System.Drawing.Point(0, 350);
             this.generate.Name = "generate";
-            this.generate.Size = new System.Drawing.Size(265, 59);
+            this.generate.Size = new System.Drawing.Size(264, 67);
             this.generate.TabIndex = 14;
             this.generate.Text = "Generar";
             this.generate.UseVisualStyleBackColor = false;
             this.generate.Click += new System.EventHandler(this.generate_Click);
+            // 
+            // type
+            // 
+            this.type.BackColor = System.Drawing.Color.Transparent;
+            this.type.Dock = System.Windows.Forms.DockStyle.Top;
+            this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.type.Image = global::PRACTICA.Properties.Resources.down_arrow;
+            this.type.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.type.Location = new System.Drawing.Point(0, 115);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(265, 46);
+            this.type.TabIndex = 3;
+            this.type.Text = "Tipo de grafica";
+            this.type.UseVisualStyleBackColor = false;
+            this.type.Click += new System.EventHandler(this.type_Click);
             // 
             // panel4
             // 
@@ -300,20 +367,12 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // top_menuStrip
+            // toolStripTextBox1
             // 
-            this.top_menuStrip.AutoSize = false;
-            this.top_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
-            this.top_menuStrip.Name = "top_menuStrip";
-            this.top_menuStrip.ShowImageMargin = false;
-            this.top_menuStrip.Size = new System.Drawing.Size(265, 26);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(55, 22);
-            this.toolStripMenuItem2.Text = "3";
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(220, 23);
             // 
             // Graphs
             // 
@@ -331,15 +390,17 @@
             this.Name = "Graphs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graficas";
+            this.Load += new System.EventHandler(this.Graphs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).EndInit();
             this.type_menuStrip.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.top_menuStrip.ResumeLayout(false);
+            this.top_menuStrip.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.top_menuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -369,5 +430,10 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ContextMenuStrip top_menuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }

@@ -60,9 +60,9 @@ namespace PRACTICA.view
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr =
-                            MessageBox.Show("Se cerraran todas las ventanas abiertas y será redirigido al login principal.",
-                            "¿Seguro?", MessageBoxButtons.YesNo);
+            DialogResult dr = 
+                MessageBox.Show("Se cerraran todas las ventanas abiertas y será redirigido al login principal.",
+                "¿Seguro?", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -73,6 +73,9 @@ namespace PRACTICA.view
                 login.Closed += (s, args) => this.Close();
                 login.Show();
             }
+            else {
+                e.Cancel = true;
+            }
         }
 
         private void closeWindows()
@@ -82,6 +85,13 @@ namespace PRACTICA.view
                 f.Close();
             }
             openWindows.Clear();
+        }
+
+        private void quotation_panel_Click(object sender, EventArgs e)
+        {
+            var q = new Quotation();
+            openWindows.Add(q);
+            q.Show();
         }
     }
 }
