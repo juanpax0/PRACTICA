@@ -24,7 +24,14 @@ namespace PRACTICA.view
             pictureBox1.ImageLocation = "C:\\a.gif";
         }
 
-        private string findSelected(ToolStripItemCollection cm) {
+        private void Graphs_Load(object sender, EventArgs e)
+        {
+            var tsl = new ToolStripLabel("Personalizado");
+            top_menuStrip.Items.Insert(5, tsl);
+        }
+
+        private string findSelected(ToolStripItemCollection cm)
+        {
             foreach (ToolStripMenuItem item in cm)
             {
                 if (item.Checked)
@@ -132,6 +139,7 @@ namespace PRACTICA.view
             }
         }
 
+        // para detectar a que barra o parte del pie se le dio click
         private void mainGraph_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             HitTestResult hit = mainGraph.HitTest(e.X, e.Y);
@@ -139,30 +147,25 @@ namespace PRACTICA.view
                 Console.WriteLine("DASDASDASDASD:" + hit.PointIndex);
         }
 
-        private void type_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /* var selectedType = type_combo.SelectedIndex;
-             if (selectedType == 0)
-             {
-                 top_label.Visible = false;
-                 top_combo.Visible = false;
-             }
-             else
-             {
-                 top_label.Visible = true;
-                 top_combo.Visible = true;
-             }*/
-        }
-
         private void type_Click(object sender, EventArgs e)
         {
-            ((Button)sender).Image = Properties.Resources.up_arrow;
+            if (type_menuStrip.Tag.ToString() == "false")
+            {
+                ((Button)sender).Image = Properties.Resources.up_arrow;
 
-            //if(type_menuStrip.close)
-            Button btnSender = (Button)sender;
-            Point ptLowerLeft = new Point(0, btnSender.Height);
-            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
-            type_menuStrip.Show(ptLowerLeft);
+                Button btnSender = (Button)sender;
+                Point ptLowerLeft = new Point(0, btnSender.Height);
+                ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+                type_menuStrip.Show(ptLowerLeft);
+
+                type_menuStrip.Tag = "true";
+            }
+            else
+            {
+                type.Image = Properties.Resources.down_arrow;
+                type_menuStrip.Tag = "false";
+                type_menuStrip.Close();
+            }
         }
 
         // se puede cambiar este evento de click por uno de checked change o algo asi
@@ -177,12 +180,37 @@ namespace PRACTICA.view
             }
         }
 
-        private void type_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        private void top_Click(object sender, EventArgs e)
         {
-           /* ((Button)(((ContextMenuStrip)sender).)).Image =
-                Properties.Resources.down_arrow; */
+            if (top_menuStrip.Tag.ToString() == "false")
+            {
+                ((Button)sender).Image = Properties.Resources.up_arrow;
 
+                Button btnSender = (Button)sender;
+                Point ptLowerLeft = new Point(0, btnSender.Height);
+                ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+                top_menuStrip.Show(ptLowerLeft);
+
+                top_menuStrip.Tag = "true";
+            }
+            else
+            {
+                top.Image = Properties.Resources.down_arrow;
+                top_menuStrip.Tag = "false";
+                top_menuStrip.Close();
+            }
+        }
+
+        private void type_SelectedItemChanged(object sender, EventArgs e)
+        {
             type.Image = Properties.Resources.down_arrow;
+            type_menuStrip.Tag = "false";
+
+            var selectedType = findSelected(type_menuStrip.Items);
+            if (selectedType == "Familias")
+                top.Visible = false;
+
+            else top.Visible = true;
         }
     }
 }

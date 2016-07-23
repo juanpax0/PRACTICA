@@ -80,5 +80,12 @@ namespace PRACTICA.view
             }
             openWindows.Clear();
         }
+
+        private void quotation_panel_Click(object sender, EventArgs e)
+        {
+            var q = new Quotation();
+            openWindows.Add(q);
+            q.Show();
+        }
     }
 }
