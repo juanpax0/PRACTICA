@@ -138,6 +138,7 @@
             this.quotation_panel.Name = "quotation_panel";
             this.quotation_panel.Size = new System.Drawing.Size(292, 133);
             this.quotation_panel.TabIndex = 7;
+            this.quotation_panel.Click += new System.EventHandler(this.quotation_panel_Click);
             this.quotation_panel.MouseEnter += new System.EventHandler(this.panel_MouseEnter);
             this.quotation_panel.MouseLeave += new System.EventHandler(this.panel_MouseLeave);
             // 

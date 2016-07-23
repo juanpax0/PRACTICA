@@ -104,13 +104,17 @@ namespace PRACTICA.view
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (listView2.SelectedIndices.Count != 0)
+            ListView newList = listView2;
+            int result = 0;
+            foreach (ListViewItem item in newList.SelectedItems)
             {
-                total -= (Int32.Parse(listView2.SelectedItems[0].SubItems[2].Text) *
-                    Int32.Parse(listView2.SelectedItems[0].SubItems[3].Text));
-                Total.Text = total.ToString();
-                listView2.Items.RemoveAt(listView2.SelectedIndices[0]);
+                result += Int32.Parse(item.SubItems[3].Text);
+                item.Remove();
+                
             }
+            total = Int32.Parse(Total.Text) - result;
+            Total.Text = total.ToString();
+            listView2.EndUpdate();
         }
 
         private void editAmoutToolStripMenuItem_Click(object sender, EventArgs e)

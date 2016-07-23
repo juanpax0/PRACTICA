@@ -52,6 +52,12 @@ namespace PRACTICA.view
             g.Show();
         }
 
+        private void quotation_panel_Click(object sender, EventArgs e) {
+            var q = new Quotation();
+            openWindows.Add(q);
+            q.Show();
+        }
+
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dr =

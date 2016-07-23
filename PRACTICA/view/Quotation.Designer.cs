@@ -116,7 +116,7 @@
             // listView2
             // 
             this.listView2.ContextMenuStrip = this.contextMenuStrip2;
-            this.listView2.Font = new System.Drawing.Font("Bodoni MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.Location = new System.Drawing.Point(11, 166);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(457, 254);
@@ -151,9 +151,8 @@
             this.Total.AutoSize = true;
             this.Total.Location = new System.Drawing.Point(441, 444);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(31, 13);
+            this.Total.Size = new System.Drawing.Size(0, 13);
             this.Total.TabIndex = 7;
-            this.Total.Text = "Total";
             // 
             // label1
             // 
