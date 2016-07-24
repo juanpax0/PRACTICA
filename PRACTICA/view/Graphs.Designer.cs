@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.mainGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.type = new System.Windows.Forms.Button();
             this.type_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.familiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosMasCotizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,17 +50,16 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.generate = new System.Windows.Forms.Button();
-            this.type = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).BeginInit();
             this.type_menuStrip.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,18 +72,36 @@
             // 
             // mainGraph
             // 
-            chartArea9.Name = "ChartArea1";
-            this.mainGraph.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.mainGraph.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.mainGraph.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.mainGraph.Legends.Add(legend1);
             this.mainGraph.Location = new System.Drawing.Point(280, 83);
             this.mainGraph.Name = "mainGraph";
             this.mainGraph.Size = new System.Drawing.Size(846, 547);
             this.mainGraph.TabIndex = 0;
             this.mainGraph.Text = "chart1";
-            title9.Name = "Title";
-            this.mainGraph.Titles.Add(title9);
+            title1.Name = "Title";
+            this.mainGraph.Titles.Add(title1);
             this.mainGraph.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainGraph_MouseDoubleClick);
+            // 
+            // type
+            // 
+            this.type.BackColor = System.Drawing.Color.Transparent;
+            this.type.Dock = System.Windows.Forms.DockStyle.Top;
+            this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.type.Image = global::PRACTICA.Properties.Resources.down_arrow;
+            this.type.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.type.Location = new System.Drawing.Point(0, 115);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(265, 46);
+            this.type.TabIndex = 3;
+            this.type.Tag = "true";
+            this.type.Text = "Tipo de grafica";
+            this.type.UseVisualStyleBackColor = false;
+            this.type.Click += new System.EventHandler(this.type_Click);
             // 
             // type_menuStrip
             // 
@@ -99,6 +117,7 @@
             this.type_menuStrip.ShowImageMargin = false;
             this.type_menuStrip.Size = new System.Drawing.Size(265, 136);
             this.type_menuStrip.Tag = "false";
+            this.type_menuStrip.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.type_menuStrip_Closed);
             // 
             // familiasToolStripMenuItem
             // 
@@ -124,7 +143,6 @@
             // 
             this.serviciosMasCotizadosToolStripMenuItem.AutoSize = false;
             this.serviciosMasCotizadosToolStripMenuItem.CheckOnClick = true;
-            this.serviciosMasCotizadosToolStripMenuItem.Name = "serviciosMasCotizadosToolStripMenuItem";
             this.serviciosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMasCotizadosToolStripMenuItem.Text = "Servicios mas cotizados";
             this.serviciosMasCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
@@ -198,7 +216,6 @@
             this.top.TabIndex = 4;
             this.top.Text = "Top";
             this.top.UseVisualStyleBackColor = false;
-            this.top.Click += new System.EventHandler(this.top_Click);
             // 
             // top_menuStrip
             // 
@@ -252,6 +269,13 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(220, 23);
             // 
             // button1
             // 
@@ -307,23 +331,6 @@
             this.generate.UseVisualStyleBackColor = false;
             this.generate.Click += new System.EventHandler(this.generate_Click);
             // 
-            // type
-            // 
-            this.type.BackColor = System.Drawing.Color.Transparent;
-            this.type.Dock = System.Windows.Forms.DockStyle.Top;
-            this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.type.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.type.Image = global::PRACTICA.Properties.Resources.down_arrow;
-            this.type.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.type.Location = new System.Drawing.Point(0, 115);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(265, 46);
-            this.type.TabIndex = 3;
-            this.type.Text = "Tipo de grafica";
-            this.type.UseVisualStyleBackColor = false;
-            this.type.Click += new System.EventHandler(this.type_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Window;
@@ -366,13 +373,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(220, 23);
             // 
             // Graphs
             // 

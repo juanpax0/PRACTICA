@@ -50,13 +50,8 @@ namespace PRACTICA.view
             if (d <= h)
             {
                 Console.WriteLine("correcto");
-            }
-            else
-            {
-                Console.WriteLine("error en fecha");
-            } */
-            //.................................................
-            //....................................................................
+            }*/
+            //................................................
 
             object selectedType = findSelected(type_menuStrip.Items);
             object selectedTop = "5";
@@ -146,26 +141,34 @@ namespace PRACTICA.view
             if (hit.PointIndex >= 0)
                 Console.WriteLine("DASDASDASDASD:" + hit.PointIndex);
         }
+        //..........................................................
+
+        bool b1 = true;
 
         private void type_Click(object sender, EventArgs e)
         {
-            if (type_menuStrip.Tag.ToString() == "false")
+            if (type.Tag.ToString() == "true")
             {
-                ((Button)sender).Image = Properties.Resources.up_arrow;
+                type.Image = Properties.Resources.up_arrow;
+                Point ptLowerLeft = new Point(0, type.Height);
+                ptLowerLeft = type.PointToScreen(ptLowerLeft);
 
-                Button btnSender = (Button)sender;
-                Point ptLowerLeft = new Point(0, btnSender.Height);
-                ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
                 type_menuStrip.Show(ptLowerLeft);
-
-                type_menuStrip.Tag = "true";
             }
             else
             {
-                type.Image = Properties.Resources.down_arrow;
-                type_menuStrip.Tag = "false";
-                type_menuStrip.Close();
+                type.Tag = "true";
             }
+        }
+
+        private void type_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+            var point = this.PointToClient(Control.MousePosition);
+
+            if (point.X > 3 && point.X < 262 && point.Y > 117 && point.Y < 159)
+                type.Tag = "false";
+
+            type.Image = Properties.Resources.down_arrow;
         }
 
         // se puede cambiar este evento de click por uno de checked change o algo asi
@@ -177,27 +180,6 @@ namespace PRACTICA.view
             {
                 if (item != sItem)
                     item.Checked = false;
-            }
-        }
-
-        private void top_Click(object sender, EventArgs e)
-        {
-            if (top_menuStrip.Tag.ToString() == "false")
-            {
-                ((Button)sender).Image = Properties.Resources.up_arrow;
-
-                Button btnSender = (Button)sender;
-                Point ptLowerLeft = new Point(0, btnSender.Height);
-                ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
-                top_menuStrip.Show(ptLowerLeft);
-
-                top_menuStrip.Tag = "true";
-            }
-            else
-            {
-                top.Image = Properties.Resources.down_arrow;
-                top_menuStrip.Tag = "false";
-                top_menuStrip.Close();
             }
         }
 
