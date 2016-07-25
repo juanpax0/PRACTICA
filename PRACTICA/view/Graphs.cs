@@ -21,7 +21,7 @@ namespace PRACTICA.view
         public Graphs()
         {
             InitializeComponent();
-            pictureBox1.ImageLocation = "C:\\a.gif";
+            animation.ImageLocation = "C:\\a.gif";
         }
 
         private void Graphs_Load(object sender, EventArgs e)
@@ -32,10 +32,12 @@ namespace PRACTICA.view
 
         private string findSelected(ToolStripItemCollection cm)
         {
-            foreach (ToolStripMenuItem item in cm)
+            for (int i = 0; i < cm.Count; i++)
             {
-                if (item.Checked)
+                ToolStripMenuItem item = cm[i] as ToolStripMenuItem;
+                if (item != null && item.Checked) {
                     return item.Text;
+                }
             }
             return null;
         }
@@ -54,33 +56,37 @@ namespace PRACTICA.view
             //................................................
 
             object selectedType = findSelected(type_menuStrip.Items);
-            object selectedTop = "5";
+            object selectedTop = findSelected(top_menuStrip.Items);
 
-            if (selectedType != null && selectedTop != null)
+            if (selectedType != null)
             {
-                pictureBox1.Visible = false;
-                if (mainGraph.Series != null)
-                    mainGraph.Series.Clear();
+                var type = selectedType.ToString();
+                var top = (selectedTop == null) ? 0 : int.Parse(selectedTop.ToString());
 
-                string type = selectedType.ToString();
-                int top = int.Parse(selectedTop.ToString());
+                if (type == "Familias" || top != 0)
+                {
+                    if (mainGraph.Series != null)
+                        mainGraph.Series.Clear();
 
-                if (type == "Familias")
-                    families();
+                    animation.Dispose();
 
-                if (type == "Articulos mas cotizados")
-                    getTop("products", top);
+                    if (type == "Familias")
+                        families();
 
-                else if (type == "Servicios mas cotizados")
-                    getTop("servicies", top);
+                    if (type == "Articulos mas cotizados")
+                        getTop("products", top);
 
-                else if (type == "Articulos menos cotizados")
-                    getBottom("products", top);
+                    else if (type == "Servicios mas cotizados")
+                        getTop("servicies", top);
 
-                else if (type == "Servicios menos cotizados")
-                    getBottom("servicies", top);
+                    else if (type == "Articulos menos cotizados")
+                        getBottom("products", top);
 
-                mainGraph.ChartAreas[0].RecalculateAxesScale();
+                    else if (type == "Servicios menos cotizados")
+                        getBottom("servicies", top);
+
+                    mainGraph.ChartAreas[0].RecalculateAxesScale();
+                }
             }
         }
 
@@ -143,11 +149,9 @@ namespace PRACTICA.view
         }
         //..........................................................
 
-        bool b1 = true;
-
         private void type_Click(object sender, EventArgs e)
         {
-            if (type.Tag.ToString() == "true")
+            if (type.Tag.ToString() == "close")
             {
                 type.Image = Properties.Resources.up_arrow;
                 Point ptLowerLeft = new Point(0, type.Height);
@@ -157,7 +161,7 @@ namespace PRACTICA.view
             }
             else
             {
-                type.Tag = "true";
+                type.Tag = "close";
             }
         }
 
@@ -166,7 +170,7 @@ namespace PRACTICA.view
             var point = this.PointToClient(Control.MousePosition);
 
             if (point.X > 3 && point.X < 262 && point.Y > 117 && point.Y < 159)
-                type.Tag = "false";
+                type.Tag = "open";
 
             type.Image = Properties.Resources.down_arrow;
         }
@@ -185,14 +189,37 @@ namespace PRACTICA.view
 
         private void type_SelectedItemChanged(object sender, EventArgs e)
         {
-            type.Image = Properties.Resources.down_arrow;
-            type_menuStrip.Tag = "false";
-
             var selectedType = findSelected(type_menuStrip.Items);
             if (selectedType == "Familias")
                 top.Visible = false;
 
             else top.Visible = true;
+        }
+
+        private void top_Click(object sender, EventArgs e)
+        {
+            if (top.Tag.ToString() == "close")
+            {
+                top.Image = Properties.Resources.up_arrow;
+                Point ptLowerLeft = new Point(0, top.Height);
+                ptLowerLeft = top.PointToScreen(ptLowerLeft);
+
+                top_menuStrip.Show(ptLowerLeft);
+            }
+            else
+            {
+                top.Tag = "close";
+            }
+        }
+
+        private void top_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+            var point = this.PointToClient(Control.MousePosition);
+
+            if (point.X > 3 && point.X < 262 && point.Y > 159 && point.Y < 201)
+                top.Tag = "open";
+
+            top.Image = Properties.Resources.down_arrow;
         }
     }
 }
