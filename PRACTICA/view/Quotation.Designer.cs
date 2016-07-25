@@ -41,6 +41,8 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editAmoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox1Discount = new System.Windows.Forms.ToolStripTextBox();
             this.Total = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
@@ -116,10 +118,10 @@
             // listView2
             // 
             this.listView2.ContextMenuStrip = this.contextMenuStrip2;
-            this.listView2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.Location = new System.Drawing.Point(11, 166);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(457, 254);
+            this.listView2.Size = new System.Drawing.Size(513, 254);
             this.listView2.TabIndex = 6;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ColumnClick);
@@ -128,9 +130,10 @@
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editAmoutToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.discountToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(135, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(135, 70);
             // 
             // editAmoutToolStripMenuItem
             // 
@@ -145,6 +148,20 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // discountToolStripMenuItem
+            // 
+            this.discountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TextBox1Discount});
+            this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
+            this.discountToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.discountToolStripMenuItem.Text = "Discount";
+            // 
+            // TextBox1Discount
+            // 
+            this.TextBox1Discount.Name = "TextBox1Discount";
+            this.TextBox1Discount.Size = new System.Drawing.Size(100, 23);
+            this.TextBox1Discount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1Discount_KeyDown);
             // 
             // Total
             // 
@@ -204,5 +221,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem editAmoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem discountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox TextBox1Discount;
     }
 }
