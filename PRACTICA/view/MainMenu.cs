@@ -20,44 +20,6 @@ namespace PRACTICA.view
             InitializeComponent();
         }
 
-        private void GraphsRepoMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_MouseEnter(object sender, EventArgs e)
-        {
-            ((Panel)sender).BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void panel_MouseLeave(object sender, EventArgs e)
-        {
-            ((Panel)sender).BorderStyle = BorderStyle.None;
-        }
-
-        private void pictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            ((Panel)(((PictureBox)sender).Parent)).BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void pictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            ((Panel)(((PictureBox)sender).Parent)).BorderStyle = BorderStyle.None;
-        }
-
-        private void graph_panel_Click(object sender, EventArgs e)
-        {
-            var g = new Graphs();
-            openWindows.Add(g);
-            g.Show();
-        }
-
-        private void quotation_panel_Click(object sender, EventArgs e) {
-            var q = new Quotation();
-            openWindows.Add(q);
-            q.Show();
-        }
-
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dr = 
@@ -87,6 +49,18 @@ namespace PRACTICA.view
             openWindows.Clear();
         }
 
-        
+        private void quotation_Click(object sender, EventArgs e)
+        {
+            var q = new Quotation();
+            openWindows.Add(q);
+            q.Show();
+        }
+
+        private void graphs_Click(object sender, EventArgs e)
+        {
+            var g = new Graphs();
+            openWindows.Add(g);
+            g.Show();
+        }
     }
 }
