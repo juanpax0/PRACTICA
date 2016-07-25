@@ -195,6 +195,9 @@ namespace PRACTICA.view
             list.EndUpdate();
         }
 
+        private void nvm() {
+        }
+
         private void TextBox1Discount_KeyDown(object sender, KeyEventArgs e)
         {
             var list = listView2;
