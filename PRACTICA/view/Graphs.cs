@@ -15,13 +15,11 @@ namespace PRACTICA.view
 {
     public partial class Graphs : Form
     {
-
         GraphsDAO query = new GraphsDAO();
 
         public Graphs()
         {
             InitializeComponent();
-            animation.ImageLocation = "C:\\a.gif";
         }
 
         private void Graphs_Load(object sender, EventArgs e)
@@ -100,10 +98,9 @@ namespace PRACTICA.view
 
             foreach (var f in fls)
             {
-                mainGraph.Series[0].Points.AddY(f.n);
+                // Este tipo de formateo hace redondeo de una vez.
+                mainGraph.Series[0].Points.AddXY(((f.n * 100.00)/total).ToString("0.00"), f.n);
                 mainGraph.Series[0].Points[i].LegendText = f.name;
-                // Esto es para el texto que aparece dentro del pedazo del pie.
-                //mainGraph.Series[0].Points[i].AxisLabel = perc.ToString(); 
                 i++;
             }
         }

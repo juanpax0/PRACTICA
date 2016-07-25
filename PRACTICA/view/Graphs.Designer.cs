@@ -372,6 +372,7 @@
             // animation
             // 
             this.animation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.animation.Image = global::PRACTICA.Properties.Resources.animation;
             this.animation.Location = new System.Drawing.Point(280, 83);
             this.animation.Name = "animation";
             this.animation.Size = new System.Drawing.Size(846, 547);
