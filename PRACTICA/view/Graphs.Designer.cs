@@ -41,6 +41,7 @@
             this.articulosMenosCotizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosMenosCotizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.top_menuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.three = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,25 +50,24 @@
             this.ten = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.datePicker = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.generate = new System.Windows.Forms.Button();
+            this.top = new System.Windows.Forms.Button();
+            this.type = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.top = new System.Windows.Forms.Button();
-            this.type = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.animation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainGraph)).BeginInit();
             this.type_menuStrip.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.top_menuStrip.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,6 +163,17 @@
             this.panel2.Size = new System.Drawing.Size(265, 69);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::PRACTICA.Properties.Resources.barChart;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(74, 67);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -235,19 +246,20 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(220, 23);
             // 
-            // button1
+            // datePicker
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(0, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(265, 46);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Rango de fecha";
-            this.button1.UseVisualStyleBackColor = false;
+            this.datePicker.BackColor = System.Drawing.Color.Transparent;
+            this.datePicker.Dock = System.Windows.Forms.DockStyle.Top;
+            this.datePicker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.datePicker.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.datePicker.Location = new System.Drawing.Point(0, 69);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(265, 46);
+            this.datePicker.TabIndex = 2;
+            this.datePicker.Text = "Rango de fecha";
+            this.datePicker.UseVisualStyleBackColor = false;
+            this.datePicker.Click += new System.EventHandler(this.datePicker_Click);
             // 
             // panel3
             // 
@@ -258,7 +270,7 @@
             this.panel3.Controls.Add(this.generate);
             this.panel3.Controls.Add(this.top);
             this.panel3.Controls.Add(this.type);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.datePicker);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -288,39 +300,6 @@
             this.generate.Text = "Generar";
             this.generate.UseVisualStyleBackColor = false;
             this.generate.Click += new System.EventHandler(this.generate_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Window;
-            this.panel4.Location = new System.Drawing.Point(265, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(873, 69);
-            this.panel4.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel5.Location = new System.Drawing.Point(273, 75);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(873, 2);
-            this.panel5.TabIndex = 15;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(272, 75);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 570);
-            this.panel7.TabIndex = 16;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(672, 2);
-            this.panel8.TabIndex = 2;
             // 
             // top
             // 
@@ -358,16 +337,38 @@
             this.type.UseVisualStyleBackColor = false;
             this.type.Click += new System.EventHandler(this.type_Click);
             // 
-            // pictureBox2
+            // panel4
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::PRACTICA.Properties.Resources.barChart;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 67);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.panel4.BackColor = System.Drawing.SystemColors.Window;
+            this.panel4.Location = new System.Drawing.Point(265, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(873, 69);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel5.Location = new System.Drawing.Point(273, 75);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(873, 2);
+            this.panel5.TabIndex = 15;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Location = new System.Drawing.Point(272, 75);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(2, 570);
+            this.panel7.TabIndex = 16;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(672, 2);
+            this.panel8.TabIndex = 2;
             // 
             // animation
             // 
@@ -402,11 +403,11 @@
             this.type_menuStrip.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.top_menuStrip.ResumeLayout(false);
             this.top_menuStrip.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animation)).EndInit();
             this.ResumeLayout(false);
 
@@ -427,7 +428,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button top;
         private System.Windows.Forms.Button type;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button datePicker;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button generate;

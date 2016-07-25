@@ -218,6 +218,19 @@ namespace PRACTICA.view
 
             top.Image = Properties.Resources.down_arrow;
         }
+
+        private void datePicker_Click(object sender, EventArgs e)
+        {
+            var gdp = new GraphsDatePicker();
+            gdp.ShowDialog();
+        }
     }
 }
 
+
+/*
+    Queda por hacer la vara de la fecha y las validaciones pertinentes.
+     
+     
+     
+     */

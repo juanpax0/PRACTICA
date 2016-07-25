@@ -82,16 +82,15 @@ namespace PRACTICA.view
             listView2.BeginUpdate();
             if (response != "" && regex.IsMatch(response) && response != "0")
             {
-
                 string[] array = new string[5];
-                ListViewItem itm;
+                //ListViewItem itm;
                 
                 array[0] = listView1.SelectedItems[0].SubItems[0].Text;
                 array[1] = listView1.SelectedItems[0].SubItems[1].Text;
                 array[2] = response;
                 array[3] = listView1.SelectedItems[0].SubItems[2].Text;
                 array[4] = "";
-                itm = new ListViewItem(array);
+                var itm = new ListViewItem(array);
                 listView2.Items.Add(itm);
 
                 total += (Int32.Parse(response) * Int32.Parse(array[3]));
@@ -103,7 +102,7 @@ namespace PRACTICA.view
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListView newList = listView2;
-            int result = 0;
+            var result = 0;
             listView2.BeginUpdate();            
             foreach (ListViewItem item in newList.SelectedItems)
             {
@@ -193,9 +192,6 @@ namespace PRACTICA.view
             }
             list.Items.AddRange(items);
             list.EndUpdate();
-        }
-
-        private void nvm() {
         }
 
         private void TextBox1Discount_KeyDown(object sender, KeyEventArgs e)

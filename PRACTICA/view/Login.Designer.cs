@@ -2,7 +2,7 @@
 
 namespace PRACTICA
 {
-    partial class Login
+    partial class login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,7 +30,7 @@ namespace PRACTICA
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.user_textBox = new System.Windows.Forms.TextBox();
             this.pass_textBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -152,7 +152,7 @@ namespace PRACTICA
             this.label1.TabIndex = 10;
             this.label1.Text = "Ingrese sus datos";
             // 
-            // Login
+            // login
             // 
             this.AcceptButton = this.conn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,9 +165,9 @@ namespace PRACTICA
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Login";
+            this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "SICAC";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
