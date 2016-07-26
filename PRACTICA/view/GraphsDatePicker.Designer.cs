@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphsDatePicker));
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.from = new System.Windows.Forms.DateTimePicker();
             this.save = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.until = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.to = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // from
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(26, 95);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.from.Location = new System.Drawing.Point(26, 95);
+            this.from.Name = "from";
+            this.from.Size = new System.Drawing.Size(200, 20);
+            this.from.TabIndex = 0;
             // 
             // save
             // 
@@ -57,12 +57,12 @@
             this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // dateTimePicker2
+            // until
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(265, 95);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.until.Location = new System.Drawing.Point(265, 95);
+            this.until.Name = "until";
+            this.until.Size = new System.Drawing.Size(200, 20);
+            this.until.TabIndex = 1;
             // 
             // label1
             // 
@@ -75,16 +75,16 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Desde";
             // 
-            // label2
+            // to
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(334, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Hasta";
+            this.to.AutoSize = true;
+            this.to.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.to.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.to.Location = new System.Drawing.Point(334, 59);
+            this.to.Name = "to";
+            this.to.Size = new System.Drawing.Size(67, 24);
+            this.to.TabIndex = 18;
+            this.to.Text = "Hasta";
             // 
             // GraphsDatePicker
             // 
@@ -92,11 +92,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(495, 249);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.to);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.until);
+            this.Controls.Add(this.from);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -111,10 +111,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker from;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker until;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label to;
     }
 }

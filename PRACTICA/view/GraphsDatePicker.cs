@@ -17,14 +17,21 @@ namespace PRACTICA.view
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void save_Click(object sender, EventArgs e)
         {
-            Close();
+            var f = from.Value.Date;
+            var u = until.Value.Date;
+
+            if (f <= u)
+            {
+                Close();
+            }
+            else
+            {
+                DialogResult dr = 
+                    MessageBox.Show("Asegúrese de que el rango de fecha es correcto.", 
+                    "¿Seguro?", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -33,57 +33,51 @@ namespace PRACTICA.view
             for (int i = 0; i < cm.Count; i++)
             {
                 ToolStripMenuItem item = cm[i] as ToolStripMenuItem;
-                if (item != null && item.Checked) {
+                if (item != null && item.Checked)
                     return item.Text;
-                }
             }
             return null;
         }
 
         private void generate_Click(object sender, EventArgs e)
         {
-
-            //...............................................
-            /*var d = desde.Value.Date;
-            var h = hasta.Value.Date;
-
-            if (d <= h)
-            {
-                Console.WriteLine("correcto");
-            }*/
-            //................................................
-
             object selectedType = findSelected(type_menuStrip.Items);
-            object selectedTop = findSelected(top_menuStrip.Items);
 
             if (selectedType != null)
             {
                 var type = selectedType.ToString();
-                var top = (selectedTop == null) ? 0 : int.Parse(selectedTop.ToString());
 
-                if (type == "Familias" || top != 0)
+                if (type == "Familias")
                 {
-                    if (mainGraph.Series != null)
-                        mainGraph.Series.Clear();
-
+                    mainGraph.Series.Clear();
                     animation.Dispose();
-
-                    if (type == "Familias")
-                        families();
-
-                    if (type == "Articulos mas cotizados")
-                        getTop("products", top);
-
-                    else if (type == "Servicios mas cotizados")
-                        getTop("servicies", top);
-
-                    else if (type == "Articulos menos cotizados")
-                        getBottom("products", top);
-
-                    else if (type == "Servicios menos cotizados")
-                        getBottom("servicies", top);
-
+                    families();
                     mainGraph.ChartAreas[0].RecalculateAxesScale();
+                }
+                else
+                {
+                    object selectedTop = findSelected(top_menuStrip.Items);
+                    var top = (selectedTop == null) ? 0 : int.Parse(selectedTop.ToString());
+
+                    if (top != 0)
+                    {
+                        mainGraph.Series.Clear();
+                        animation.Dispose();
+
+                        if (type == "Articulos mas cotizados")
+                            getTop("products", top);
+
+                        else if (type == "Servicios mas cotizados")
+                            getTop("servicies", top);
+
+                        else if (type == "Articulos menos cotizados")
+                            getBottom("products", top);
+
+                        else if (type == "Servicios menos cotizados")
+                            getBottom("servicies", top);
+
+                        mainGraph.ChartAreas[0].RecalculateAxesScale();
+                    }
                 }
             }
         }
@@ -99,7 +93,7 @@ namespace PRACTICA.view
             foreach (var f in fls)
             {
                 // Este tipo de formateo hace redondeo de una vez.
-                mainGraph.Series[0].Points.AddXY(((f.n * 100.00)/total).ToString("0.00"), f.n);
+                mainGraph.Series[0].Points.AddXY(((f.n * 100.00) / total).ToString("0.00"), f.n);
                 mainGraph.Series[0].Points[i].LegendText = f.name;
                 i++;
             }
@@ -157,9 +151,7 @@ namespace PRACTICA.view
                 type_menuStrip.Show(ptLowerLeft);
             }
             else
-            {
                 type.Tag = "close";
-            }
         }
 
         private void type_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
@@ -172,25 +164,22 @@ namespace PRACTICA.view
             type.Image = Properties.Resources.down_arrow;
         }
 
-        // se puede cambiar este evento de click por uno de checked change o algo asi
         private void type_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var selectedType = findSelected(type_menuStrip.Items);
             var sItem = (ToolStripMenuItem)sender;
+
+            if (selectedType == "Familias")
+                top.Visible = false;
+
+            else
+                top.Visible = true;
 
             foreach (ToolStripMenuItem item in type_menuStrip.Items)
             {
                 if (item != sItem)
                     item.Checked = false;
             }
-        }
-
-        private void type_SelectedItemChanged(object sender, EventArgs e)
-        {
-            var selectedType = findSelected(type_menuStrip.Items);
-            if (selectedType == "Familias")
-                top.Visible = false;
-
-            else top.Visible = true;
         }
 
         private void top_Click(object sender, EventArgs e)
@@ -204,9 +193,7 @@ namespace PRACTICA.view
                 top_menuStrip.Show(ptLowerLeft);
             }
             else
-            {
                 top.Tag = "close";
-            }
         }
 
         private void top_menuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
@@ -219,6 +206,19 @@ namespace PRACTICA.view
             top.Image = Properties.Resources.down_arrow;
         }
 
+        private void top_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem sItem = sender as ToolStripMenuItem;
+            var count = top_menuStrip.Items.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                ToolStripMenuItem item = top_menuStrip.Items[i] as ToolStripMenuItem;
+                if (item != null && item != sItem)
+                    item.Checked = false;
+            }
+        }
+
         private void datePicker_Click(object sender, EventArgs e)
         {
             var gdp = new GraphsDatePicker();
@@ -226,11 +226,3 @@ namespace PRACTICA.view
         }
     }
 }
-
-
-/*
-    Queda por hacer la vara de la fecha y las validaciones pertinentes.
-     
-     
-     
-     */

@@ -109,7 +109,6 @@
             this.familiasToolStripMenuItem.Name = "familiasToolStripMenuItem";
             this.familiasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.familiasToolStripMenuItem.Text = "Familias";
-            this.familiasToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
             this.familiasToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // articulosMasCotizadosToolStripMenuItem
@@ -119,7 +118,6 @@
             this.articulosMasCotizadosToolStripMenuItem.Name = "articulosMasCotizadosToolStripMenuItem";
             this.articulosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMasCotizadosToolStripMenuItem.Text = "Articulos mas cotizados";
-            this.articulosMasCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
             this.articulosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // serviciosMasCotizadosToolStripMenuItem
@@ -129,7 +127,6 @@
             this.serviciosMasCotizadosToolStripMenuItem.Name = "serviciosMasCotizadosToolStripMenuItem";
             this.serviciosMasCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMasCotizadosToolStripMenuItem.Text = "Servicios mas cotizados";
-            this.serviciosMasCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
             this.serviciosMasCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // articulosMenosCotizadosToolStripMenuItem
@@ -139,7 +136,6 @@
             this.articulosMenosCotizadosToolStripMenuItem.Name = "articulosMenosCotizadosToolStripMenuItem";
             this.articulosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.articulosMenosCotizadosToolStripMenuItem.Text = "Articulos menos cotizados";
-            this.articulosMenosCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
             this.articulosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // serviciosMenosCotizadosToolStripMenuItem
@@ -149,7 +145,6 @@
             this.serviciosMenosCotizadosToolStripMenuItem.Name = "serviciosMenosCotizadosToolStripMenuItem";
             this.serviciosMenosCotizadosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.serviciosMenosCotizadosToolStripMenuItem.Text = "Servicios menos cotizados";
-            this.serviciosMenosCotizadosToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.type_SelectedItemChanged);
             this.serviciosMenosCotizadosToolStripMenuItem.Click += new System.EventHandler(this.type_ToolStripMenuItem_Click);
             // 
             // panel2
@@ -209,6 +204,7 @@
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(265, 22);
             this.three.Text = "3";
+            this.three.Click += new System.EventHandler(this.top_ToolStripMenuItem_Click);
             // 
             // five
             // 
@@ -217,6 +213,7 @@
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(265, 22);
             this.five.Text = "5";
+            this.five.Click += new System.EventHandler(this.top_ToolStripMenuItem_Click);
             // 
             // seven
             // 
@@ -225,6 +222,7 @@
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(265, 22);
             this.seven.Text = "7";
+            this.seven.Click += new System.EventHandler(this.top_ToolStripMenuItem_Click);
             // 
             // ten
             // 
@@ -233,6 +231,7 @@
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(265, 22);
             this.ten.Text = "10";
+            this.ten.Click += new System.EventHandler(this.top_ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
