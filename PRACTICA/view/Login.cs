@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PRACTICA
 {
-    public partial class Login : Form
+    public partial class login : Form
     {
-        public Login()
+        public login()
         {
             InitializeComponent();
         }

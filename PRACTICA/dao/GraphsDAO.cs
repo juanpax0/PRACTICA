@@ -138,10 +138,10 @@ namespace PRACTICA.dao
             return products;
         }
 
-        public List<Family> getFamilies()
+        public List<Family> getFamilies(string from, string until)
         {
             List<Family> families = new List<Family>();
-            string query = string.Format("call get_families");
+            string query = string.Format("call get_families('{0}', '{1}')", from, until);
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
 
             dbConn.Open();
@@ -149,8 +149,8 @@ namespace PRACTICA.dao
 
             while (reader.Read())
             {
-                string name = reader["NAME"].ToString();
-                int n = (int)reader["N"];
+                string name = reader["FAMILY"].ToString();
+                int n = int.Parse(reader["N"].ToString());
 
                 Family f = new Family(name, n);
                 families.Add(f);

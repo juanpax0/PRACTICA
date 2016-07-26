@@ -31,7 +31,7 @@ namespace PRACTICA.view
                 closeWindows();
 
                 Hide();
-                var login = new Login();
+                var login = new login();
                 login.Closed += (s, args) => this.Close();
                 login.Show();
             }
