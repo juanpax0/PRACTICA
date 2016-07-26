@@ -77,7 +77,7 @@ namespace PRACTICA.view
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string response = Microsoft.VisualBasic.Interaction.InputBox("Cantidad", 
+            string response = Microsoft.VisualBasic.Interaction.InputBox("Cantidad",
                 "Cantidad de Producto", "0", 4, 4);
             listView2.BeginUpdate();
             if (response != "" && regex.IsMatch(response) && response != "0")
@@ -85,7 +85,7 @@ namespace PRACTICA.view
 
                 string[] array = new string[5];
                 ListViewItem itm;
-                
+
                 array[0] = listView1.SelectedItems[0].SubItems[0].Text;
                 array[1] = listView1.SelectedItems[0].SubItems[1].Text;
                 array[2] = response;
@@ -104,7 +104,7 @@ namespace PRACTICA.view
         {
             ListView newList = listView2;
             int result = 0;
-            listView2.BeginUpdate();            
+            listView2.BeginUpdate();
             foreach (ListViewItem item in newList.SelectedItems)
             {
                 if (item.SubItems[4].Text == "")
@@ -112,12 +112,13 @@ namespace PRACTICA.view
                     result += (Int32.Parse(item.SubItems[3].Text) * Int32.Parse(item.SubItems[2].Text));
                     item.Remove();
                 }
-                else {
+                else
+                {
                     double percent = Int32.Parse(item.SubItems[4].Text) / 100.00;
 
-                    result += (Int32) ((Int32.Parse(item.SubItems[3].Text) 
-                        * Int32.Parse(item.SubItems[2].Text)) 
-                        - ((Int32.Parse(item.SubItems[3].Text) 
+                    result += (Int32)((Int32.Parse(item.SubItems[3].Text)
+                        * Int32.Parse(item.SubItems[2].Text))
+                        - ((Int32.Parse(item.SubItems[3].Text)
                         * Int32.Parse(item.SubItems[2].Text) * percent)));
                     item.Remove();
                 }
@@ -156,46 +157,32 @@ namespace PRACTICA.view
         private void ColumnClick(object sender, ColumnClickEventArgs e)
         {
             ListView list = (ListView)sender;
-            int total = list.Items.Count;
-            list.BeginUpdate();
-            ListViewItem[] items = new ListViewItem[total];
-            if (flag)
+            var total = list.Items.Count;
+            list.BeginUpdate();            
+            flag = (flag) ? false : true;
+            for (int i = 0; i < total; i++)
             {
-                for (int i = 0; i < total; i++)
+                var minPos = i;              
+                for (int j = i + 1; j < total; j++)
                 {
-                    int count = list.Items.Count;
-                    var minIdx = 0;
-                    for (int j = 1; j < count; j++)
-                    {
-                        if (list.Items[j].SubItems[e.Column].Text.CompareTo(list.Items[minIdx].SubItems[e.Column].Text) > 0)
-                            minIdx = j;
-                    }
-                    items[i] = list.Items[minIdx];
-                    list.Items.RemoveAt(minIdx);
-                }
-                flag = false;
-            }
-            else
-            {
-                for (int i = 0; i < total; i++)
-                {
-                    int count = list.Items.Count;
-                    int minIdx = 0;
-                    for (int j = 1; j < count; j++)
-                    {
-                        if (list.Items[j].SubItems[e.Column].Text.CompareTo(list.Items[minIdx].SubItems[e.Column].Text) < 0)
-                            minIdx = j;
-                    }
-                    items[i] = list.Items[minIdx];
-                    list.Items.RemoveAt(minIdx);
-                }
-                flag = true;
-            }
-            list.Items.AddRange(items);
-            list.EndUpdate();
-        }
+                    var before = list.Items[minPos].SubItems[e.Column].Text;
+                    var next = list.Items[j].SubItems[e.Column].Text;
 
-        private void nvm() {
+                    if ((flag && before.CompareTo(next) > 0) 
+                        || (!flag && before.CompareTo(next) < 0))
+                    {
+                        minPos = j;
+                    }
+                    else
+                    {
+                        ListViewItem item1 = (ListViewItem)list.Items[minPos].Clone();
+                        ListViewItem item2 = (ListViewItem)list.Items[j].Clone();
+                        list.Items[minPos] = item2;
+                        list.Items[j] = item1;
+                    }
+                }
+            }
+            list.EndUpdate();
         }
 
         private void TextBox1Discount_KeyDown(object sender, KeyEventArgs e)
