@@ -16,6 +16,7 @@ namespace PRACTICA.view
     public partial class Graphs : Form
     {
         GraphsDAO query = new GraphsDAO();
+        GraphsDatePicker dateP = new GraphsDatePicker();
 
         public Graphs()
         {
@@ -42,16 +43,20 @@ namespace PRACTICA.view
         private void generate_Click(object sender, EventArgs e)
         {
             object selectedType = findSelected(type_menuStrip.Items);
+            object dateFrom = dateP.dateFrom;
+            object dateUntil = dateP.dateUntil;
 
-            if (selectedType != null)
+            if (selectedType != null && dateFrom != null && dateUntil != null)
             {
+                var from = ((DateTime)dateFrom).ToShortDateString();
+                var until = ((DateTime)dateUntil).ToShortDateString();
                 var type = selectedType.ToString();
 
                 if (type == "Familias")
                 {
                     mainGraph.Series.Clear();
                     animation.Dispose();
-                    families();
+                    families(from, until);
                     mainGraph.ChartAreas[0].RecalculateAxesScale();
                 }
                 else
@@ -82,13 +87,13 @@ namespace PRACTICA.view
             }
         }
 
-        private void families()
+        private void families(string from, string until)
         {
-            List<Family> fls = query.getFamilies();
+            List<Family> fls = query.getFamilies(from, until);
             mainGraph.Series.Add("Familias");
             mainGraph.Series[0].ChartType = SeriesChartType.Pie;
             var i = 0;
-            var total = 1221;   //total de registros en las familias
+            var total = 19;   //total de registros en las familias
 
             foreach (var f in fls)
             {
@@ -221,8 +226,7 @@ namespace PRACTICA.view
 
         private void datePicker_Click(object sender, EventArgs e)
         {
-            var gdp = new GraphsDatePicker();
-            gdp.ShowDialog();
+            dateP.ShowDialog();
         }
     }
 }

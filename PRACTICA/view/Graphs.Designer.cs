@@ -49,7 +49,7 @@
             this.seven = new System.Windows.Forms.ToolStripMenuItem();
             this.ten = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.customize = new System.Windows.Forms.ToolStripTextBox();
             this.datePicker = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -189,7 +189,7 @@
             this.seven,
             this.ten,
             this.toolStripSeparator1,
-            this.toolStripTextBox1});
+            this.customize});
             this.top_menuStrip.Name = "top_menuStrip";
             this.top_menuStrip.ShowCheckMargin = true;
             this.top_menuStrip.ShowImageMargin = false;
@@ -238,12 +238,12 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
             // 
-            // toolStripTextBox1
+            // customize
             // 
-            this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(220, 23);
+            this.customize.AutoSize = false;
+            this.customize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customize.Name = "customize";
+            this.customize.Size = new System.Drawing.Size(220, 23);
             // 
             // datePicker
             // 
@@ -441,6 +441,6 @@
         private System.Windows.Forms.ToolStripMenuItem seven;
         private System.Windows.Forms.ToolStripMenuItem ten;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox customize;
     }
 }

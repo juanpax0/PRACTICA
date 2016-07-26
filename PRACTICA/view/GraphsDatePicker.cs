@@ -12,6 +12,9 @@ namespace PRACTICA.view
 {
     public partial class GraphsDatePicker : Form
     {
+        public DateTime dateFrom;
+        public DateTime dateUntil;
+
         public GraphsDatePicker()
         {
             InitializeComponent();
@@ -24,13 +27,16 @@ namespace PRACTICA.view
 
             if (f <= u)
             {
+                dateFrom = f;
+                dateUntil = u;
+
                 Close();
             }
             else
             {
                 DialogResult dr = 
-                    MessageBox.Show("Asegúrese de que el rango de fecha es correcto.", 
-                    "¿Seguro?", MessageBoxButtons.OK);
+                    MessageBox.Show("Asegúrese de que el rango de fecha sea correcto.", 
+                    "Ocurrio un error", MessageBoxButtons.OK);
             }
         }
     }
