@@ -42,38 +42,6 @@
             this.panel5.Location = new System.Drawing.Point(13, 103);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(777, 2);
-            this.panel5.TabIndex = 16;
-            // 
-            // queries
-            // 
-            this.queries.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.queries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.queries.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.queries.Image = global::PRACTICA.Properties.Resources.queries;
-            this.queries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.queries.Location = new System.Drawing.Point(431, 304);
-            this.queries.Name = "queries";
-            this.queries.Size = new System.Drawing.Size(292, 130);
-            this.queries.TabIndex = 20;
-            this.queries.Text = "Productos y Servicios   ";
-            this.queries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.queries.UseVisualStyleBackColor = false;
-            // 
-            // graphs
-            // 
-            this.graphs.BackColor = System.Drawing.Color.SandyBrown;
-            this.graphs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.graphs.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.graphs.Image = global::PRACTICA.Properties.Resources.graphs;
-            this.graphs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.graphs.Location = new System.Drawing.Point(431, 152);
-            this.graphs.Name = "graphs";
-            this.graphs.Size = new System.Drawing.Size(292, 130);
-            this.graphs.TabIndex = 19;
-            this.graphs.Text = "Graficas    ";
-            this.graphs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.graphs.UseVisualStyleBackColor = false;
-            this.graphs.Click += new System.EventHandler(this.graphs_Click);
             // 
             // reports
             // 
@@ -85,10 +53,26 @@
             this.reports.Location = new System.Drawing.Point(75, 152);
             this.reports.Name = "reports";
             this.reports.Size = new System.Drawing.Size(292, 130);
-            this.reports.TabIndex = 18;
+            this.reports.TabIndex = 0;
             this.reports.Text = "Reportes  ";
             this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.reports.UseVisualStyleBackColor = false;
+            // 
+            // graphs
+            // 
+            this.graphs.BackColor = System.Drawing.Color.SandyBrown;
+            this.graphs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.graphs.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.graphs.Image = global::PRACTICA.Properties.Resources.graphs;
+            this.graphs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.graphs.Location = new System.Drawing.Point(431, 152);
+            this.graphs.Name = "graphs";
+            this.graphs.Size = new System.Drawing.Size(292, 130);
+            this.graphs.TabIndex = 1;
+            this.graphs.Text = "Graficas    ";
+            this.graphs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.graphs.UseVisualStyleBackColor = false;
+            this.graphs.Click += new System.EventHandler(this.graphs_Click);
             // 
             // quotation
             // 
@@ -100,11 +84,26 @@
             this.quotation.Location = new System.Drawing.Point(75, 304);
             this.quotation.Name = "quotation";
             this.quotation.Size = new System.Drawing.Size(292, 130);
-            this.quotation.TabIndex = 17;
+            this.quotation.TabIndex = 2;
             this.quotation.Text = "Cotizar    ";
             this.quotation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.quotation.UseVisualStyleBackColor = false;
             this.quotation.Click += new System.EventHandler(this.quotation_Click);
+            // 
+            // queries
+            // 
+            this.queries.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.queries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.queries.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.queries.Image = global::PRACTICA.Properties.Resources.queries;
+            this.queries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.queries.Location = new System.Drawing.Point(431, 304);
+            this.queries.Name = "queries";
+            this.queries.Size = new System.Drawing.Size(292, 130);
+            this.queries.TabIndex = 3;
+            this.queries.Text = "Productos y Servicios   ";
+            this.queries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.queries.UseVisualStyleBackColor = false;
             // 
             // MainMenu
             // 
