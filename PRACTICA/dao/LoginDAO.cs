@@ -15,7 +15,7 @@ namespace PRACTICA.dao
 
         public bool login(Person person)
         {
-            string query = string.Format("call login('{0}', '{1}')", person.id, person.password);
+            /*string query = string.Format("call login('{0}', '{1}')", person.id, person.password);
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
 
             dbConn.Open();
@@ -25,10 +25,9 @@ namespace PRACTICA.dao
             object respADM = (respN == 1) ? (int)reader["IS_ADM"] : 0;
 
             reader.Close();
-            dbConn.Close();
+            dbConn.Close();*/
 
             return true;
         }
-
     }
 }

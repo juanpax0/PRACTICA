@@ -42,21 +42,22 @@
             this.panel5.Location = new System.Drawing.Point(13, 103);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(777, 2);
+            this.panel5.TabIndex = 4;
             // 
-            // reports
+            // queries
             // 
-            this.reports.BackColor = System.Drawing.Color.Khaki;
-            this.reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reports.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reports.Image = global::PRACTICA.Properties.Resources.reports;
-            this.reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reports.Location = new System.Drawing.Point(75, 152);
-            this.reports.Name = "reports";
-            this.reports.Size = new System.Drawing.Size(292, 130);
-            this.reports.TabIndex = 0;
-            this.reports.Text = "Reportes  ";
-            this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.reports.UseVisualStyleBackColor = false;
+            this.queries.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.queries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.queries.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.queries.Image = global::PRACTICA.Properties.Resources.queries;
+            this.queries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.queries.Location = new System.Drawing.Point(431, 304);
+            this.queries.Name = "queries";
+            this.queries.Size = new System.Drawing.Size(292, 130);
+            this.queries.TabIndex = 3;
+            this.queries.Text = "Productos y Servicios   ";
+            this.queries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.queries.UseVisualStyleBackColor = false;
             // 
             // graphs
             // 
@@ -74,6 +75,21 @@
             this.graphs.UseVisualStyleBackColor = false;
             this.graphs.Click += new System.EventHandler(this.graphs_Click);
             // 
+            // reports
+            // 
+            this.reports.BackColor = System.Drawing.Color.Khaki;
+            this.reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reports.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reports.Image = global::PRACTICA.Properties.Resources.reports;
+            this.reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reports.Location = new System.Drawing.Point(75, 152);
+            this.reports.Name = "reports";
+            this.reports.Size = new System.Drawing.Size(292, 130);
+            this.reports.TabIndex = 0;
+            this.reports.Text = "Reportes  ";
+            this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.reports.UseVisualStyleBackColor = false;
+            // 
             // quotation
             // 
             this.quotation.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -89,21 +105,6 @@
             this.quotation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.quotation.UseVisualStyleBackColor = false;
             this.quotation.Click += new System.EventHandler(this.quotation_Click);
-            // 
-            // queries
-            // 
-            this.queries.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.queries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.queries.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.queries.Image = global::PRACTICA.Properties.Resources.queries;
-            this.queries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.queries.Location = new System.Drawing.Point(431, 304);
-            this.queries.Name = "queries";
-            this.queries.Size = new System.Drawing.Size(292, 130);
-            this.queries.TabIndex = 3;
-            this.queries.Text = "Productos y Servicios   ";
-            this.queries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.queries.UseVisualStyleBackColor = false;
             // 
             // MainMenu
             // 

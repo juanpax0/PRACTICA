@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,7 +51,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -148,34 +163,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\graph_gif.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\renteco.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\conectar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\graficas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\reportes.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\report.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\grafico.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\generar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\username.png" />
@@ -184,28 +178,7 @@
     <None Include="Resources\password.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\blacktexture.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logout1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\greentexture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\whitetexture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cotizar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cotizar1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\consulta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\down.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu-icon-15.png" />
@@ -220,9 +193,6 @@
     <None Include="Resources\xgoal.png.pagespeed.ic.astvegoVTA.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\descarga.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\home-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -233,12 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close-window-512.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down_arrow.png" />
@@ -260,6 +224,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\animation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
