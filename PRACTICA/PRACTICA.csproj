@@ -80,11 +80,11 @@
     <Compile Include="view\Graphs.Designer.cs">
       <DependentUpon>Graphs.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\GraphsDatePicker.cs">
+    <Compile Include="view\InsertData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\GraphsDatePicker.Designer.cs">
-      <DependentUpon>GraphsDatePicker.cs</DependentUpon>
+    <Compile Include="view\InsertData.Designer.cs">
+      <DependentUpon>InsertData.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Login.cs">
       <SubType>Form</SubType>
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="view\Graphs.resx">
       <DependentUpon>Graphs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\GraphsDatePicker.resx">
-      <DependentUpon>GraphsDatePicker.cs</DependentUpon>
+    <EmbeddedResource Include="view\InsertData.resx">
+      <DependentUpon>InsertData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -236,6 +236,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renteco_logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

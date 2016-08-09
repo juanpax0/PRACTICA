@@ -13,21 +13,25 @@ namespace PRACTICA.dao
     {
         private MySqlConnection dbConn = new DBConnection().getConnection();
 
-        public bool login(Person person)
+        public bool[] login(Person person)
         {
-            /*string query = string.Format("call login('{0}', '{1}')", person.id, person.password);
+            string query = string.Format("call login('{0}', '{1}')", person.id, person.password);
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
 
             dbConn.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            int respN = (int)reader["N"];
-            object respADM = (respN == 1) ? (int)reader["IS_ADM"] : 0;
+            var respN = (int.Parse(reader["N"].ToString()) == 1) ? true : false;
+            Console.WriteLine("respN: " + respN);
+            var respADM = (respN) ? (bool)reader["IS_ADM"] : false;
+            Console.WriteLine("respN: " + respN);
 
             reader.Close();
-            dbConn.Close();*/
+            dbConn.Close();
 
-            return true;
+            bool[] re = { respN, respADM };
+
+            return re;
         }
     }
 }

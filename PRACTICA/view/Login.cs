@@ -27,21 +27,12 @@ namespace PRACTICA
             var id = user_textBox.Text.Replace(" ", "");
             var pass = pass_textBox.Text.Replace(" ", "");
 
-            // ..................................................
-            // ..................................................
-            // ..................................................
-            // Al parece hay algun error con estas condiciones.
-            // REVISAR ESTO.
-            // ..................................................
-            // ..................................................
-            // ..................................................
-
-            if (!id.Equals("") && !pass.Equals(""))
+            if (!id.Equals("Usuario") && !pass.Equals("Contraseña"))
             {
                 Person p = new Person(id, pass);
-                var resp = query.login(p);
+                bool[] resp = query.login(p);
 
-                if (resp)
+                if (resp[0])
                 {
                     Hide();
                     var gpm = new view.MainMenu();
@@ -52,7 +43,6 @@ namespace PRACTICA
                     DialogResult dr = 
                         MessageBox.Show("Asegúrese de que los datos introducidos son correctos.",
                        "Ocurrio un error", MessageBoxButtons.OK);
-
                 }
             }
         }
