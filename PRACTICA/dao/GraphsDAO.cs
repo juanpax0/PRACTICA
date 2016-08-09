@@ -15,10 +15,15 @@ namespace PRACTICA.dao
 
         public GraphsDAO() { }
 
-        public List<Product> getProducts()
+
+        /*Todos los metodos aparte del de Familias no estan haciendo uso de las fechas desde y hasta*/
+        /*..........................................................................................
+         ...........................................................................................*/
+
+        public List<Family> getFamilies(string from, string until, int top)
         {
-            List<Product> products = new List<Product>();
-            string query = "call get_products";
+            List<Family> families = new List<Family>();
+            string query = string.Format("call get_families('{0}', '{1}', {2})", from, until, top);
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
 
             dbConn.Open();
@@ -26,21 +31,20 @@ namespace PRACTICA.dao
 
             while (reader.Read())
             {
-                string id = reader["ID"].ToString();
-                string name = reader["NAME"].ToString();
-                int quotationNum = (int)reader["QUOTATION_NUM"];
+                string name = reader["FAMILY"].ToString();
+                int n = int.Parse(reader["N"].ToString());
 
-                Product h = new Product(id, name, quotationNum);
-                products.Add(h);
+                Family f = new Family(name, n);
+                families.Add(f);
             }
 
             reader.Close();
             dbConn.Close();
 
-            return products;
+            return families;
         }
 
-        public List<Product> getTopProducts(int top)
+        public List<Product> getTopProducts(string from, string until, int top)
         {
             List<Product> products = new List<Product>();
             string query = string.Format("call get_top_products({0})", top);
@@ -65,7 +69,7 @@ namespace PRACTICA.dao
             return products;
         }
 
-        public List<Product> getTopServices(int top)
+        public List<Product> getTopServices(string from, string until, int top)
         {
             List<Product> products = new List<Product>();
             string query = string.Format("call get_top_services({0})", top);
@@ -90,7 +94,7 @@ namespace PRACTICA.dao
             return products;
         }
 
-        public List<NoProduct> getBottomProducts(int top)
+        public List<NoProduct> getBottomProducts(string from, string until, int top)
         {
             List<NoProduct> products = new List<NoProduct>();
             string query = string.Format("call get_bottomtop_products({0})", top);
@@ -114,7 +118,7 @@ namespace PRACTICA.dao
             return products;
         }
 
-        public List<NoProduct> getBottomServices(int top)
+        public List<NoProduct> getBottomServices(string from, string until, int top)
         {
             List<NoProduct> products = new List<NoProduct>();
             string query = string.Format("call get_bottomtop_services({0})", top);
@@ -137,30 +141,5 @@ namespace PRACTICA.dao
 
             return products;
         }
-
-        public List<Family> getFamilies(string from, string until)
-        {
-            List<Family> families = new List<Family>();
-            string query = string.Format("call get_families('{0}', '{1}')", from, until);
-            MySqlCommand cmd = new MySqlCommand(query, dbConn);
-
-            dbConn.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                string name = reader["FAMILY"].ToString();
-                int n = int.Parse(reader["N"].ToString());
-
-                Family f = new Family(name, n);
-                families.Add(f);
-            }
-
-            reader.Close();
-            dbConn.Close();
-
-            return families;
-        }
-
     }
 }

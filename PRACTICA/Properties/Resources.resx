@@ -166,6 +166,9 @@
   <data name="xgoal.png.pagespeed.ic.astvegoVTA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xgoal.png.pagespeed.ic.astvegoVTA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="renteco_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\renteco_logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="up_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,7 +184,7 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="renteco_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\renteco_logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_renteco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_renteco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

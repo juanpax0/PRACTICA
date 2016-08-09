@@ -64,7 +64,7 @@
             this.from.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.from.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.from.CalendarTrailingForeColor = System.Drawing.SystemColors.Control;
-            this.from.Location = new System.Drawing.Point(136, 114);
+            this.from.Location = new System.Drawing.Point(120, 89);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(200, 20);
             this.from.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             // until
             // 
-            this.until.Location = new System.Drawing.Point(375, 114);
+            this.until.Location = new System.Drawing.Point(355, 89);
             this.until.Name = "until";
             this.until.Size = new System.Drawing.Size(200, 20);
             this.until.TabIndex = 1;
@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(195, 78);
+            this.label1.Location = new System.Drawing.Point(176, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 16;
@@ -106,7 +106,7 @@
             this.to.AutoSize = true;
             this.to.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.to.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.to.Location = new System.Drawing.Point(444, 78);
+            this.to.Location = new System.Drawing.Point(413, 51);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(67, 24);
             this.to.TabIndex = 18;
@@ -114,7 +114,7 @@
             // 
             // top
             // 
-            this.top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.top.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.top.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.top.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -131,7 +131,7 @@
             // 
             // type
             // 
-            this.type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.type.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.type.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -287,32 +287,32 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.to);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(728, 72);
             this.panel1.TabIndex = 22;
             // 
-            // GraphsDatePicker
+            // InsertData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(728, 507);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.from);
+            this.Controls.Add(this.until);
             this.Controls.Add(this.top);
             this.Controls.Add(this.type);
-            this.Controls.Add(this.to);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.until);
-            this.Controls.Add(this.from);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GraphsDatePicker";
+            this.Name = "InsertData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ingreso de datos";
             this.Load += new System.EventHandler(this.GraphsDatePicker_Load);
@@ -321,8 +321,8 @@
             this.type_menuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
