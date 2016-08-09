@@ -57,7 +57,7 @@
             this.mainGraph.Legends.Add(legend1);
             this.mainGraph.Location = new System.Drawing.Point(279, 20);
             this.mainGraph.Name = "mainGraph";
-            this.mainGraph.Size = new System.Drawing.Size(846, 610);
+            this.mainGraph.Size = new System.Drawing.Size(847, 610);
             this.mainGraph.TabIndex = 0;
             this.mainGraph.Text = "chart1";
             title1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,7 +133,7 @@
             this.generate.BackColor = System.Drawing.Color.Brown;
             this.generate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.generate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generate.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.generate.Location = new System.Drawing.Point(0, 555);
             this.generate.Name = "generate";

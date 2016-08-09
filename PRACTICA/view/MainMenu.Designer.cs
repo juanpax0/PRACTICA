@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.queries = new System.Windows.Forms.Button();
             this.graphs = new System.Windows.Forms.Button();
             this.reports = new System.Windows.Forms.Button();
             this.quotation = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -48,9 +50,30 @@
             this.panel5.Size = new System.Drawing.Size(777, 2);
             this.panel5.TabIndex = 4;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(802, 72);
+            this.panel1.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PRACTICA.Properties.Resources.logo_renteco;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 72);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // queries
             // 
-            this.queries.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.queries.BackColor = System.Drawing.Color.WhiteSmoke;
             this.queries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.queries.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.queries.Image = global::PRACTICA.Properties.Resources.queries;
@@ -65,7 +88,7 @@
             // 
             // graphs
             // 
-            this.graphs.BackColor = System.Drawing.Color.SandyBrown;
+            this.graphs.BackColor = System.Drawing.Color.WhiteSmoke;
             this.graphs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.graphs.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.graphs.Image = global::PRACTICA.Properties.Resources.graphs;
@@ -81,7 +104,7 @@
             // 
             // reports
             // 
-            this.reports.BackColor = System.Drawing.Color.Khaki;
+            this.reports.BackColor = System.Drawing.Color.WhiteSmoke;
             this.reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reports.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reports.Image = global::PRACTICA.Properties.Resources.reports;
@@ -96,7 +119,7 @@
             // 
             // quotation
             // 
-            this.quotation.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.quotation.BackColor = System.Drawing.Color.WhiteSmoke;
             this.quotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quotation.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quotation.Image = global::PRACTICA.Properties.Resources.quotation;
@@ -122,15 +145,6 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 72);
-            this.panel1.TabIndex = 23;
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,8 +163,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,7 +176,8 @@
         private System.Windows.Forms.Button reports;
         private System.Windows.Forms.Button graphs;
         private System.Windows.Forms.Button queries;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

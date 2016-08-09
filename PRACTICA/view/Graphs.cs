@@ -41,72 +41,70 @@ namespace PRACTICA.view
                 mainGraph.Series.Clear();
 
                 if (type == "Familias")
-                    families(from, until, top);
+                    getFamilies(from, until, top);
 
                 else if (type == "Articulos mas cotizados")
-                    getTop("products", top);
+                    getTop("products", from, until, top);
 
                 else if (type == "Servicios mas cotizados")
-                    getTop("servicies", top);
+                    getTop("servicies", from, until, top);
 
                 else if (type == "Articulos menos cotizados")
-                    getBottom("products", top);
+                    getBottom("products", from, until, top);
 
                 else if (type == "Servicios menos cotizados")
-                    getBottom("servicies", top);
+                    getBottom("servicies", from, until, top);
 
                 mainGraph.ChartAreas[0].RecalculateAxesScale();
             }
+            else {
+                DialogResult dr =
+                    MessageBox.Show("Asegúrese de que los datos introducidos sean correctos.",
+                    "¡Alerta!", MessageBoxButtons.OK);
+            }
         }
 
-        private void families(string from, string until, int top)
+        private void getFamilies(string from, string until, int top)
         {
-            List<Family> fls = query.getFamilies(from, until);
+            List<Family> fls = query.getFamilies(from, until, top);
             mainGraph.Series.Add("Familias");
             mainGraph.Series[0].ChartType = SeriesChartType.Pie;
             mainGraph.Titles[0].Text = string.Format("Grafica de Familias. Desde {0} hasta {1}.", from, until);
-            var i = 0;
 
             var total = 19;   //total de registros en las familias
 
-            foreach (var f in fls)
-            {
-                // Este tipo de formateo hace redondeo de una vez.
-                mainGraph.Series[0].Points.AddXY(((f.n * 100.00) / total).ToString("0.00"), f.n);
-                mainGraph.Series[0].Points[i].LegendText = f.name;
-                i++;
+            for (int i = 0; i < fls.Count; i++) {
+                mainGraph.Series[0].Points.AddXY(((fls[i].n * 100.00) / total).ToString("0.00"), fls[i].n);
+                mainGraph.Series[0].Points[i].LegendText = fls[i].name;
             }
         }
 
-        private void getTop(string method, int top)
+        /* Estas no tienen el titulo de la grafica que les corresponde. */
+        private void getTop(string method, string from, string until, int top)
         {
-            List<Product> prs = (method == "products") ? query.getTopProducts(top) :
-                query.getTopServices(top);
-            var i = 0;
+            List<Product> prs = (method == "products") ? query.getTopProducts(from, until, top) :
+                query.getTopServices(from, until, top);
 
-            foreach (var p in prs)
+            for (int i = 0; i < prs.Count; i++)
             {
-                mainGraph.Series.Add(p.name);
+                mainGraph.Series.Add(prs[i].name);
                 mainGraph.ApplyPaletteColors();
-                mainGraph.Series[0].Points.AddY(p.quotationNum);
+                mainGraph.Series[0].Points.AddY(prs[i].quotationNum);
                 mainGraph.Series[0].Points[i].Color = mainGraph.Series[i].Color;
-                i++;
             }
         }
 
-        private void getBottom(string method, int top)
+        private void getBottom(string method, string from, string until, int top)
         {
-            List<NoProduct> prs = (method == "products") ? query.getBottomProducts(top) :
-                query.getBottomServices(top);
-            var i = 0;
+            List<NoProduct> prs = (method == "products") ? query.getBottomProducts(from, until, top) :
+                query.getBottomServices(from, until, top);
 
-            foreach (var np in prs)
+            for (int i = 0; i < prs.Count; i++)
             {
-                mainGraph.Series.Add(np.name);
+                mainGraph.Series.Add(prs[i].name);
                 mainGraph.ApplyPaletteColors();
-                mainGraph.Series[0].Points.AddY(np.quotationNum);
+                mainGraph.Series[0].Points.AddY(prs[i].quotationNum);
                 mainGraph.Series[0].Points[i].Color = mainGraph.Series[i].Color;
-                i++;
             }
         }
 
@@ -115,7 +113,7 @@ namespace PRACTICA.view
             insertData.ShowDialog();
         }
 
-        // para detectar a que barra o parte del pie se le dio click
+        // Para detectar a que barra o parte del pie se le dio click
         private void mainGraph_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             HitTestResult hit = mainGraph.HitTest(e.X, e.Y);
